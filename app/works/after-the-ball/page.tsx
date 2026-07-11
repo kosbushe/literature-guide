@@ -1,4 +1,5 @@
 import { EventLink } from "@/components/EventLink";
+import { ContextCodeCard } from "@/components/ContextCodeCard";
 import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
 import { workCore, workRu } from "@/lib/content";
@@ -30,6 +31,7 @@ export default function AfterTheBallPage() {
             {workRu.before.epoch.map((item) => <article key={item.title}><span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}
           </div>
         </section>
+        <ContextCodeCard card={workRu.before.contextCard} />
         <h3 className="section-label">Люди в этой сцене</h3>
         <div className="character-grid">
           {workRu.before.characters.map((character) => (
