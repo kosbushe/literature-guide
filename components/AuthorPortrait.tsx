@@ -1,4 +1,5 @@
 type AuthorPortraitProps = {
+  ageMark: string;
   alt: string;
   caption: string;
   credit: string;
@@ -6,22 +7,23 @@ type AuthorPortraitProps = {
   src?: string;
 };
 
-export function AuthorPortrait({ alt, caption, credit, label, src }: AuthorPortraitProps) {
+export function AuthorPortrait({ ageMark, alt, caption, credit, label, src }: AuthorPortraitProps) {
   return (
-    <figure className="season-author-portrait">
-      <div className="season-portrait-image-wrap">
+    <figure className="tolstoy-portrait">
+      <div className="portrait-image-wrap">
         {src ? (
           <img alt={alt} src={src} />
         ) : (
-          <div className="season-portrait-symbol" aria-label={alt} role="img">
+          <div className="portrait-symbol" aria-label={alt} role="img">
             <span>ЛГ</span>
             <strong>{label}</strong>
           </div>
         )}
-        <span className="season-portrait-mark">архив</span>
+        <span className="portrait-age">{ageMark}</span>
       </div>
       <figcaption>
         <strong>{caption}</strong>
+        <span>{label} · архивный портрет</span>
         <small>{credit}</small>
       </figcaption>
     </figure>
