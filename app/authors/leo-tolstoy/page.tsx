@@ -19,6 +19,7 @@ export default function TolstoyPage() {
             <span>Жил в Казани<br /><b>у тётки</b></span>
             <span>До первого романа<br /><b>ещё 8 лет</b></span>
           </div>
+          <AgeMirror compact />
           <Link className="button" href="#cards">Листать его историю</Link>
         </div>
         <TolstoyPortrait />
@@ -43,7 +44,6 @@ export default function TolstoyPage() {
               </details>
             )}
             {block.question && <blockquote>{block.question}</blockquote>}
-            {block.id === "peer_age" && <AgeMirror />}
           </article>
         ))}
       </div>
