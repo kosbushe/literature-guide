@@ -19,8 +19,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         {children}
         <footer>
-          <span>ЛИТЕРАТУРА.ГАЙД</span>
-          <p>Сначала контекст. Потом текст. Вывод – твой.</p>
+          <div className="footer-main">
+            <span>ЛИТЕРАТУРА.ГАЙД</span>
+            <p>Сначала контекст. Потом текст. Вывод – твой.</p>
+          </div>
+          <div className="footer-legal">
+            <p>Авторский образовательный проект Константина Буше – учителя литературы, филолога и отца четверых детей.</p>
+            <p>Материалы носят информационно-образовательный характер и не являются публичной офертой.</p>
+          </div>
         </footer>
       </body>
     </html>
