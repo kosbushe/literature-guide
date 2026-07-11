@@ -1,6 +1,8 @@
 type TimeContextProps = {
   year: string;
   era: string;
+  work: string;
+  visualIndex: number;
 };
 
 type TimeBridge = {
@@ -59,16 +61,43 @@ function bridgeFor(year: string, era: string): TimeBridge {
   };
 }
 
-export function TimeContext({ year, era }: TimeContextProps) {
+function introFor(work: string, visualIndex: number) {
+  const intros = [
+    `Посмотри на мир «${work}»: у ровесника героя другие границы, скорость жизни и цена выбора.`,
+    `Перед чтением «${work}» представь, что тебе столько же лет, но вокруг нет привычного тебе мира.`,
+    `Узнай место и время «${work}» — тогда поступки героев перестают казаться далёкими и странными.`,
+    `В «${work}» привычные тебе вещи устроены иначе: сначала почувствуй эту разницу, потом открывай текст.`,
+    `Это не фон для сюжета: мир «${work}» объясняет, почему герои выбирают именно так.`,
+  ];
+  return intros[visualIndex % intros.length];
+}
+
+export function TimeContext({ year, era, work, visualIndex }: TimeContextProps) {
   const bridge = bridgeFor(year, era);
+  const panel = visualIndex % 9;
+  const sheet = Math.floor(visualIndex / 9) + 1;
+  const x = (panel % 3) * 50;
+  const y = Math.floor(panel / 3) * 50;
 
   return (
     <section className="epoch-context" aria-label={`Временной контекст: ${year}, ${era}`}>
-      <div className="epoch-title">
-        <span>ВРЕМЯ ТЕКСТА · {year}</span>
-        <strong>{era}</strong>
+      <div className="epoch-media-row">
+        <div
+          className="epoch-scene"
+          role="img"
+          aria-label={`Иллюстрация: ${era}`}
+          style={{ backgroundImage: `url(/literature-guide/context/time-scenes-${String(sheet).padStart(2, "0")}.jpg)`, backgroundPosition: `${x}% ${y}%` }}
+        >
+          <span>МЕСТО И ВРЕМЯ</span>
+        </div>
+        <div>
+          <div className="epoch-title">
+            <span>ВРЕМЯ ТЕКСТА · {year}</span>
+            <strong>{era}</strong>
+          </div>
+          <p className="epoch-intro">{introFor(work, visualIndex)}</p>
+        </div>
       </div>
-      <p className="epoch-intro">Представь: тебе столько же лет, но правила мира уже другие.</p>
       <div className="epoch-grid">
         <article><span>ТЫ СЕЙЧАС</span><h3>{bridge.today.title}</h3><p>{bridge.today.text}</p></article>
         <article><span>ТВОЙ РОВЕСНИК ТОГДА</span><h3>{bridge.then.title}</h3><p>{bridge.then.text}</p></article>

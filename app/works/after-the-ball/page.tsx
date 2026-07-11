@@ -32,7 +32,7 @@ export default function AfterTheBallPage() {
       <section className="reading-section before" id="before">
         <p className="eyebrow">Перед чтением</p>
         <h2>Сначала пойми,<br />куда ты попал.</h2>
-        <TimeContext year="1840-е" era="Россия, бал, чин и правила сословий" />
+        <TimeContext year="1840-е" era="Россия, бал, чин и правила сословий" work="После бала" visualIndex={51} />
         <ContextCodeCard card={workRu.before.contextCard} />
         <h3 className="section-label">Люди в этой сцене</h3>
         <div className="character-grid">

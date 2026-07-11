@@ -38,6 +38,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const terms = route.terms.length >= 4 ? route.terms : [...route.terms, { term: "Деталь", text: "Небольшая подробность, которая помогает увидеть главный выбор героя." }];
   const characters = route.characters ?? [{ name: route.author, description: route.authorIntro }, { name: "Главный конфликт", description: route.contextTitle }, { name: "Твой вопрос", description: route.question }];
   const stops = route.signals.slice(0, 3).map((signal, index) => ({ stop: ["На старте", "В середине", "После финала"][index], question: signal.title, hint: signal.text }));
+  const visualIndex = guideRoutes.findIndex((item) => item.slug === route.slug);
 
   return (
     <main>
@@ -61,7 +62,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       <section className="reading-section before" id="before">
         <p className="eyebrow">Перед чтением</p>
         <h2>Сначала пойми,<br />куда ты попал.</h2>
-        <TimeContext year={route.year} era={route.era} />
+        <TimeContext year={route.year} era={route.era} work={route.work} visualIndex={visualIndex} />
         <ContextCodeCard imageAlt={profile?.portrait.alt} imageSrc={profile?.portrait.src} card={{ code: "КОД ТЕКСТА · 01", title: route.contextTitle, thesis: route.contextText, points: route.signals }} />
         <h3 className="section-label">Люди в этой истории</h3>
         <div className="character-grid">
