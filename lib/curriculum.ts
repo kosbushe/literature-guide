@@ -56,12 +56,12 @@ export const curriculum: GradeCurriculum[] = [
     phase: "Человек внутри истории",
     prompt: "Война, власть, свобода, ответственность и голос героя.",
     works: [
-      { author: "А. С. Пушкин", title: "Станционный смотритель" },
-      { author: "М. Ю. Лермонтов", title: "Песня про купца Калашникова" },
-      { author: "Н. В. Гоголь", title: "Тарас Бульба" },
-      { author: "М. Е. Салтыков-Щедрин", title: "Сказки" },
-      { author: "А. П. Чехов", title: "Хамелеон" },
-      { author: "А. Т. Твардовский", title: "Василий Тёркин" }
+      { author: "А. С. Пушкин", title: "Станционный смотритель", ready: true, href: "/works/pushkin-stationmaster" },
+      { author: "М. Ю. Лермонтов", title: "Песня про купца Калашникова", ready: true, href: "/works/lermontov-kalashnikov" },
+      { author: "Н. В. Гоголь", title: "Тарас Бульба", ready: true, href: "/works/gogol-taras-bulba" },
+      { author: "М. Е. Салтыков-Щедрин", title: "Сказки", ready: true, href: "/works/saltykov-fairy-tales" },
+      { author: "А. П. Чехов", title: "Хамелеон", ready: true, href: "/works/chekhov-chameleon" },
+      { author: "А. Т. Твардовский", title: "Василий Тёркин", ready: true, href: "/works/tvardovsky-terkin" }
     ],
     authors: ["А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "Н. А. Некрасов", "М. Е. Салтыков-Щедрин", "Л. Н. Толстой", "А. П. Чехов", "М. Горький", "А. П. Платонов", "А. Т. Твардовский", "В. М. Шукшин"]
   },
@@ -70,11 +70,11 @@ export const curriculum: GradeCurriculum[] = [
     phase: "Эпоха, маска, выбор",
     prompt: "Литература начинает показывать: личная история всегда живёт внутри устройства мира.",
     works: [
-      { author: "Д. И. Фонвизин", title: "Недоросль" },
-      { author: "Н. М. Карамзин", title: "Бедная Лиза" },
-      { author: "А. С. Пушкин", title: "Капитанская дочка" },
-      { author: "М. Ю. Лермонтов", title: "Мцыри" },
-      { author: "Н. В. Гоголь", title: "Ревизор" },
+      { author: "Д. И. Фонвизин", title: "Недоросль", ready: true, href: "/works/fonvizin-minor" },
+      { author: "Н. М. Карамзин", title: "Бедная Лиза", ready: true, href: "/works/karamzin-poor-liza" },
+      { author: "А. С. Пушкин", title: "Капитанская дочка", ready: true, href: "/works/pushkin-captains-daughter" },
+      { author: "М. Ю. Лермонтов", title: "Мцыри", ready: true, href: "/works/lermontov-mtsyri" },
+      { author: "Н. В. Гоголь", title: "Ревизор", ready: true, href: "/works/gogol-inspector" },
       { author: "Л. Н. Толстой", title: "После бала", ready: true, href: "/works/after-the-ball" }
     ],
     authors: ["Д. И. Фонвизин", "Н. М. Карамзин", "В. А. Жуковский", "А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "М. Е. Салтыков-Щедрин", "Л. Н. Толстой", "Ф. М. Достоевский", "А. П. Чехов"]
@@ -84,12 +84,12 @@ export const curriculum: GradeCurriculum[] = [
     phase: "Большой разговор с классикой",
     prompt: "Романы, поэмы и пьесы, которые собирают XIX и XX век в одну картину.",
     works: [
-      { author: "А. С. Грибоедов", title: "Горе от ума" },
-      { author: "А. С. Пушкин", title: "Евгений Онегин" },
-      { author: "М. Ю. Лермонтов", title: "Герой нашего времени" },
-      { author: "Н. В. Гоголь", title: "Мёртвые души" },
-      { author: "Ф. М. Достоевский", title: "Бедные люди" },
-      { author: "М. А. Булгаков", title: "Собачье сердце" }
+      { author: "А. С. Грибоедов", title: "Горе от ума", ready: true, href: "/works/griboyedov-woe-from-wit" },
+      { author: "А. С. Пушкин", title: "Евгений Онегин", ready: true, href: "/works/pushkin-eugene-onegin" },
+      { author: "М. Ю. Лермонтов", title: "Герой нашего времени", ready: true, href: "/works/lermontov-hero-of-our-time" },
+      { author: "Н. В. Гоголь", title: "Мёртвые души", ready: true, href: "/works/gogol-dead-souls" },
+      { author: "Ф. М. Достоевский", title: "Бедные люди", ready: true, href: "/works/dostoevsky-poor-folk" },
+      { author: "М. А. Булгаков", title: "Собачье сердце", ready: true, href: "/works/bulgakov-dogs-heart" }
     ],
     authors: ["А. С. Грибоедов", "А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "И. А. Гончаров", "А. Н. Островский", "Н. А. Некрасов", "Ф. И. Тютчев", "А. А. Фет", "М. Е. Салтыков-Щедрин", "Ф. М. Достоевский", "Л. Н. Толстой", "А. П. Чехов", "И. А. Бунин", "М. Горький", "А. А. Блок", "С. А. Есенин", "В. В. Маяковский", "М. А. Булгаков", "М. А. Шолохов", "А. И. Солженицын"]
   },

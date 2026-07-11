@@ -4,10 +4,14 @@ import { AgeMirror } from "@/components/AgeMirror";
 import { AuthorPortrait } from "@/components/AuthorPortrait";
 import { fifthGradeAuthorProfiles, fifthGradeRoutes } from "@/lib/fifth-grade";
 import { sixthGradeAuthorProfiles, sixthGradeRoutes } from "@/lib/sixth-grade";
+import { seventhGradeRoutes } from "@/lib/seventh-grade";
+import { eighthGradeRoutes } from "@/lib/eighth-grade";
+import { ninthGradeRoutes } from "@/lib/ninth-grade";
+import { upperGradeAuthorProfiles } from "@/lib/upper-grade-authors";
 
-const guideRoutes = [...fifthGradeRoutes, ...sixthGradeRoutes];
+const guideRoutes = [...fifthGradeRoutes, ...sixthGradeRoutes, ...seventhGradeRoutes, ...eighthGradeRoutes, ...ninthGradeRoutes];
 const authorRoutes = (slug: string) => guideRoutes.filter((route) => route.authorSlug === slug);
-const authorProfiles = { ...fifthGradeAuthorProfiles, ...sixthGradeAuthorProfiles };
+const authorProfiles = { ...fifthGradeAuthorProfiles, ...sixthGradeAuthorProfiles, ...upperGradeAuthorProfiles };
 
 export function generateStaticParams() {
   return [...new Set(guideRoutes.map((route) => route.authorSlug))].map((slug) => ({ slug }));

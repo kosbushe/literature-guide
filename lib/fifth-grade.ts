@@ -16,6 +16,7 @@ export type GuideRoute = {
   contextTitle: string;
   contextText: string;
   signals: { title: string; text: string }[];
+  characters?: { name: string; description: string }[];
   terms: { term: string; text: string }[];
   question: string;
   fullTextUrl: string;
