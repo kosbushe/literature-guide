@@ -4,6 +4,7 @@ import { ContextCodeCard } from "@/components/ContextCodeCard";
 import { EventLink } from "@/components/EventLink";
 import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
+import { BookCover } from "@/components/BookCover";
 import { fifthGradeAuthorProfiles, fifthGradeBySlug, fifthGradeRoutes } from "@/lib/fifth-grade";
 import { sixthGradeAuthorProfiles, sixthGradeBySlug, sixthGradeRoutes } from "@/lib/sixth-grade";
 import { seventhGradeRoutes } from "@/lib/seventh-grade";
@@ -40,18 +41,21 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
 
   return (
     <main>
-      <section className="work-hero">
-        <p className="eyebrow">{route.category} · {route.authorShort}</p>
-        <p className="hero-kicker">Сначала вопрос. Потом – текст.</p>
-        <h1>{route.workShort ?? route.work}</h1>
-        <p className="lead">{route.hook}</p>
-        <p className="route-line">{route.year} · {route.era}</p>
-        <div className="hero-actions">
-          <EventLink event="full_text_opened" external href={route.fullTextUrl}>Открыть текст</EventLink>
-          <Link className="button button-ghost" href={`/authors/${route.authorSlug}`}>Про автора</Link>
-          <a className="button button-ghost" href="#before">Дай мне контекст</a>
+      <section className="work-hero work-hero-with-cover">
+        <div className="work-hero-copy">
+          <p className="eyebrow">{route.category} · {route.authorShort}</p>
+          <p className="hero-kicker">Сначала вопрос. Потом – текст.</p>
+          <h1>{route.workShort ?? route.work}</h1>
+          <p className="lead">{route.hook}</p>
+          <p className="route-line">{route.year} · {route.era}</p>
+          <div className="hero-actions">
+            <EventLink event="full_text_opened" external href={route.fullTextUrl}>Открыть текст</EventLink>
+            <Link className="button button-ghost" href={`/authors/${route.authorSlug}`}>Про автора</Link>
+            <a className="button button-ghost" href="#before">Дай мне контекст</a>
+          </div>
+          <p className="micro">Откроется в новой вкладке · никаких регистраций</p>
         </div>
-        <p className="micro">Откроется в новой вкладке · никаких регистраций</p>
+        <BookCover author={route.author} title={route.work} grade={route.category.match(/\d+/)?.[0]} />
       </section>
 
       <section className="reading-section before" id="before">
