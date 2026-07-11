@@ -4,10 +4,10 @@ import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: { default: "Литература гайд", template: "%s · Литература гайд" },
-  description: "Сначала пойми, куда ты попал. Потом читай.",
+  description: "Навигатор по школьной русской литературе: класс, произведение, автор, эпоха и вход в текст.",
   openGraph: {
     title: "Литература гайд",
-    description: "Вход в классику через человека, эпоху и личный вопрос подростка.",
+    description: "Навигатор по школьной русской литературе: класс, произведение, автор, эпоха и вход в текст.",
     type: "website"
   }
 };
