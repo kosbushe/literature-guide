@@ -7,7 +7,7 @@ export default function SourcesPage() {
     <main>
       <section className="simple-hero">
         <p className="eyebrow">Редакционный стандарт</p>
-        <h1>Факты —<br /><em>с адресом.</em></h1>
+        <h1>Факты –<br /><em>с адресом.</em></h1>
         <p className="lead">Мы отделяем документированный факт от версии и красивой семейной легенды. Если точность возраста или детали спорна, так и пишем.</p>
       </section>
       <section className="source-list">
