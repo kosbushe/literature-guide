@@ -4,14 +4,14 @@ import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
 import { workCore, workRu } from "@/lib/content";
 
-export const metadata = { title: "После бала — маршрут чтения" };
+export const metadata = { title: "После бала – маршрут чтения" };
 
 export default function AfterTheBallPage() {
   return (
     <main>
       <section className="work-hero">
         <p className="eyebrow">Лев Толстой · маршрут чтения</p>
-        <p className="hero-kicker">Сначала вопрос. Потом — текст.</p>
+        <p className="hero-kicker">Сначала вопрос. Потом – текст.</p>
         <h1>После<br /><em>бала</em></h1>
         <p className="lead">{workRu.teaser}</p>
         <p className="route-line">{workRu.routeLine}</p>
@@ -26,7 +26,7 @@ export default function AfterTheBallPage() {
         <p className="eyebrow">Перед чтением</p>
         <h2>Сначала пойми,<br />куда ты попал.</h2>
         <section className="epoch-context" aria-label="Россия 1840-х годов">
-          <div className="epoch-title"><span>Россия · 1840-е</span><strong>У тебя 4G.<br />У Ивана — лошадь, письмо и статус.</strong></div>
+          <div className="epoch-title"><span>Россия · 1840-е</span><strong>У тебя 4G.<br />У Ивана – лошадь, письмо и статус.</strong></div>
           <div className="epoch-grid">
             {workRu.before.epoch.map((item) => <article key={item.title}><span>{item.label}</span><h3>{item.title}</h3></article>)}
           </div>
