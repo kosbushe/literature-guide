@@ -9,9 +9,9 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">8 класс · 13–15 лет</p>
-          <p className="hero-kicker">Классика — это не пыль. Это люди, которым было примерно столько же, сколько тебе.</p>
+          <p className="hero-kicker">Классика – это не пыль. Это люди, которым было примерно столько же, сколько тебе.</p>
           <h1>Толстой<br />в <em>15</em></h1>
-          <p className="lead">Не сдал экзамен с первого раза. Жил без родителей. Уже спорил с миром — и с собой.</p>
+          <p className="lead">Не сдал экзамен с первого раза. Жил без родителей. Уже спорил с миром – и с собой.</p>
           <div className="hero-actions">
             <EventLink event="guide_opened" href="/authors/leo-tolstoy">Посмотреть его карточку</EventLink>
             <EventLink className="button button-ghost" event="guide_opened" href="/works/after-the-ball">Сразу к рассказу</EventLink>
@@ -43,9 +43,9 @@ export default function Home() {
       <section className="how-section">
         <p className="eyebrow">Без школьной туманы</p>
         <ol className="how-grid">
-          <li><span>01</span><h3>Зацепиться</h3><p>Сначала — живой человек и факт, который удивляет.</p></li>
+          <li><span>01</span><h3>Зацепиться</h3><p>Сначала – живой человек и факт, который удивляет.</p></li>
           <li><span>02</span><h3>Понять код</h3><p>Только слова, без которых в тексте будет темно.</p></li>
-          <li><span>03</span><h3>Открыть</h3><p>Дальше — рассказ. Без теста и пересказа.</p></li>
+          <li><span>03</span><h3>Открыть</h3><p>Дальше – рассказ. Без теста и пересказа.</p></li>
         </ol>
       </section>
     </main>
