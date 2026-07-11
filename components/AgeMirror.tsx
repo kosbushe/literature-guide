@@ -15,7 +15,7 @@ const tolstoyAtAge: Record<number, string> = {
   15: "не сдал с первого раза историю и статистику — а потом пересдал"
 };
 
-export function AgeMirror() {
+export function AgeMirror({ compact = false }: { compact?: boolean }) {
   const [age, setAge] = useState(15);
   const [answer, setAnswer] = useState("");
   const [message, setMessage] = useState("");
@@ -35,16 +35,24 @@ export function AgeMirror() {
   }
 
   return (
-    <div className="age-mirror">
-      <label htmlFor="age">Мне {age}</label>
+    <div className={compact ? "age-mirror compact" : "age-mirror"}>
+      <label className="age-slider-label" htmlFor={compact ? "hero-age" : "age"}>
+        <span>Мне {age} лет</span>
+        <small>Передвинь ползунок</small>
+      </label>
       <input
-        id="age"
+        id={compact ? "hero-age" : "age"}
         max="15"
         min="13"
         onChange={(event) => setAge(Number(event.target.value))}
         type="range"
         value={age}
       />
+      <div className="age-ticks" aria-hidden="true"><span>13</span><span>14</span><span>15</span></div>
+      {compact ? (
+        <div className="age-result"><span>Толстой в {age}</span><strong>{tolstoyAtAge[age]}</strong><p>{prompts[age]}</p></div>
+      ) : (
+        <>
       <div className="split-card">
         <div><span>Толстой в {age}</span><strong>{tolstoyAtAge[age]}</strong></div>
         <div><span>Я в {age}</span><strong>{prompts[age]}</strong></div>
@@ -59,6 +67,8 @@ export function AgeMirror() {
       />
       <button className="button button-ghost" onClick={share} type="button">Поделиться сравнением</button>
       {message && <small aria-live="polite">{message}</small>}
+        </>
+      )}
     </div>
   );
 }
