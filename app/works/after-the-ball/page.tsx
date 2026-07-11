@@ -3,6 +3,7 @@ import { ContextCodeCard } from "@/components/ContextCodeCard";
 import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
 import { workCore, workRu } from "@/lib/content";
+import Link from "next/link";
 
 export const metadata = { title: "После бала – маршрут чтения" };
 
@@ -17,6 +18,7 @@ export default function AfterTheBallPage() {
         <p className="route-line">{workRu.routeLine}</p>
         <div className="hero-actions">
           <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть рассказ</EventLink>
+          <Link className="button button-ghost" href="/authors/leo-tolstoy">Про Толстого</Link>
           <a className="button button-ghost" href="#before">Дай мне контекст</a>
         </div>
         <p className="micro">Откроется в новой вкладке · никаких регистраций</p>
