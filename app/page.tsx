@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { EventLink } from "@/components/EventLink";
+import { TolstoyPortrait } from "@/components/TolstoyPortrait";
 import { workRu } from "@/lib/content";
 
 export default function Home() {
@@ -8,27 +9,29 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">8 класс · 13–15 лет</p>
-          <h1>Сначала пойми,<br />куда ты попал.<br /><em>Потом читай.</em></h1>
-          <p className="lead">Старые книги часто кажутся чужими не потому, что они скучные. Просто никто не объяснил, кто эти люди, по каким правилам они жили и почему один танец или мундир значили больше, чем сейчас.</p>
-          <EventLink event="guide_opened" href="/works/after-the-ball">Начать с «После бала»</EventLink>
-          <p className="micro">Лев Толстой · {workRu.routeLine}</p>
+          <p className="hero-kicker">Классика — это не пыль. Это люди, которым было примерно столько же, сколько тебе.</p>
+          <h1>Толстой<br />в <em>15</em></h1>
+          <p className="lead">Не сдал экзамен с первого раза. Жил без родителей. Уже спорил с миром — и с собой.</p>
+          <div className="hero-actions">
+            <EventLink event="guide_opened" href="/authors/leo-tolstoy">Посмотреть его карточку</EventLink>
+            <EventLink className="button button-ghost" event="guide_opened" href="/works/after-the-ball">Сразу к рассказу</EventLink>
+          </div>
+          <p className="micro">Первая история: «После бала» · 4 минуты до текста</p>
         </div>
-        <div className="hero-mark" aria-hidden="true">
-          <span>ДО</span><i></i><span>ПОСЛЕ</span>
-        </div>
+        <TolstoyPortrait />
       </section>
 
       <section className="route-section">
-        <p className="eyebrow">Первый маршрут</p>
+        <p className="eyebrow">Первый маршрут · 04 минуты</p>
         <div className="route-grid">
           <div>
-            <h2>Лев Толстой.<br />«После бала»</h2>
+            <h2>Один вечер.<br />Один рассвет.<br /><em>Один вопрос.</em></h2>
             <p>{workRu.teaser}</p>
           </div>
           <div className="route-facts">
-            <span>Подготовка</span><strong>4 минуты</strong>
-            <span>Спойлеры</span><strong>нет</strong>
-            <span>Задача</span><strong>открыть текст</strong>
+            <span>Формат</span><strong>Карточки</strong>
+            <span>Спойлеры</span><strong>0</strong>
+            <span>Твоя задача</span><strong>Нажать «читать»</strong>
           </div>
         </div>
         <div className="button-row">
@@ -38,11 +41,11 @@ export default function Home() {
       </section>
 
       <section className="how-section">
-        <p className="eyebrow">Как это работает</p>
+        <p className="eyebrow">Без школьной туманы</p>
         <ol className="how-grid">
-          <li><span>01</span><h3>Человек</h3><p>Не памятник и борода, а живой автор с противоречиями.</p></li>
-          <li><span>02</span><h3>Контекст</h3><p>Незнакомый мир — коротко, точно и без школьной туманности.</p></li>
-          <li><span>03</span><h3>Текст</h3><p>Ты читаешь. Мы только помогаем заметить важное.</p></li>
+          <li><span>01</span><h3>Зацепиться</h3><p>Сначала — живой человек и факт, который удивляет.</p></li>
+          <li><span>02</span><h3>Понять код</h3><p>Только слова, без которых в тексте будет темно.</p></li>
+          <li><span>03</span><h3>Открыть</h3><p>Дальше — рассказ. Без теста и пересказа.</p></li>
         </ol>
       </section>
     </main>
