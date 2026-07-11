@@ -1,49 +1,49 @@
 [
   {
     "id": "tolstoy-ru-chronology",
-    "title": "Толстой.ру — хронология жизни, 1830–1872",
+    "title": "Толстой.ру – хронология жизни, 1830–1872",
     "url": "https://tolstoy.ru/life/biography/index.php?df=1830&dt=1872&page=2&q=",
     "kind": "authoritative_archive",
     "status": "verified"
   },
   {
     "id": "tolstoy-ru-volume-34",
-    "title": "Толстой.ру — академическое собрание сочинений, том 34",
+    "title": "Толстой.ру – академическое собрание сочинений, том 34",
     "url": "https://tolstoy.ru/online/90/34/",
     "kind": "primary_text_and_commentary",
     "status": "verified"
   },
   {
     "id": "tolstoy-museum-after-ball",
-    "title": "Государственный музей Л. Н. Толстого — реальная история «После бала»",
+    "title": "Государственный музей Л. Н. Толстого – реальная история «После бала»",
     "url": "https://tolstoymuseum.ru/news/2024/09/10/73641/",
     "kind": "museum",
     "status": "verified"
   },
   {
     "id": "military-history-punishment",
-    "title": "Военно-исторический журнал — военно-уголовное законодательство России XIX века",
+    "title": "Военно-исторический журнал – военно-уголовное законодательство России XIX века",
     "url": "https://history.milportal.ru/razvitie-voenno-ugolovnogo-zakonodatelstva-v-rossii-v-pervoj-polovine-xix-veka-1812-1867-gg/",
     "kind": "scholarly_article",
     "status": "verified"
   },
   {
     "id": "bre-recruitment",
-    "title": "Большая российская энциклопедия — рекрутская повинность",
+    "title": "Большая российская энциклопедия – рекрутская повинность",
     "url": "https://old.bigenc.ru/military_science/text/3504829",
     "kind": "encyclopedia",
     "status": "verified"
   },
   {
     "id": "arzamas-ball",
-    "title": "Arzamas — как был устроен русский бал",
+    "title": "Arzamas – как был устроен русский бал",
     "url": "https://arzamas.academy/materials/1427",
     "kind": "cultural_commentary",
     "status": "verified"
   },
   {
     "id": "wikisource-after-ball",
-    "title": "Викитека — полный текст «После бала»",
+    "title": "Викитека – полный текст «После бала»",
     "url": "https://ru.wikisource.org/wiki/После_бала_(Толстой)",
     "kind": "full_text",
     "status": "verified"
