@@ -7,6 +7,7 @@ const authorRu = read("content/authors/leo-tolstoy/locales/ru.json");
 const work = read("content/works/after-the-ball/core.json");
 const workRu = read("content/works/after-the-ball/locales/ru.json");
 const sources = read("content/sources/sources.json");
+const curriculum = fs.readFileSync(new URL("../lib/curriculum.ts", import.meta.url), "utf8");
 
 const requiredPassportIds = [
   "who", "peer_age", "growing_up", "world_around", "inner_conflict",
@@ -29,4 +30,7 @@ for (const block of authorRu.passport) {
   for (const sourceId of block.sourceIds) assert.ok(sourceIds.has(sourceId), `Missing source: ${sourceId}`);
 }
 
-console.log("Content validation passed: Tolstoy + After the Ball MVP");
+const fifthGradeBlock = curriculum.match(/grade: 5,[\s\S]*?authors:/)?.[0] ?? "";
+assert.equal((fifthGradeBlock.match(/ready: true/g) ?? []).length, 9, "Fifth grade must have nine ready first-season routes");
+
+console.log("Content validation passed: Tolstoy + After the Ball + fifth grade");
