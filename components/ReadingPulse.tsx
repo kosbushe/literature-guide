@@ -21,7 +21,7 @@ export function ReadingPulse() {
   return (
     <section className="pulse" aria-labelledby="pulse-title">
       <p className="eyebrow">Главная проверка MVP</p>
-      <h2 id="pulse-title">Ты успел начать рассказ?</h2>
+      <h2 id="pulse-title">Ты успел открыть текст?</h2>
       <div className="choice-grid">
         {options.map(([value, label]) => (
           <button
@@ -36,7 +36,7 @@ export function ReadingPulse() {
         ))}
       </div>
       {answer === "reading" && <p className="response">Отлично. Больше не отвлекаем.</p>}
-      {answer === "later" && <p className="response">Хорошо. Рассказ будет ждать здесь.</p>}
+      {answer === "later" && <p className="response">Хорошо. Текст будет ждать здесь.</p>}
       {answer === "broken" && <p className="response">Ссылку проверим. Пока открой текст из учебника.</p>}
       {answer === "declined" && <p className="response">Это тоже честный ответ. Нам важно понять – почему.</p>}
     </section>
