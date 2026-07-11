@@ -98,12 +98,12 @@ export const curriculum: GradeCurriculum[] = [
     phase: "XIX век крупным планом",
     prompt: "Как возникли вопросы свободы, любви, денег, веры и власти, которые всё ещё не закрыты.",
     works: [
-      { author: "А. Н. Островский", title: "Гроза" },
-      { author: "И. А. Гончаров", title: "Обломов" },
-      { author: "И. С. Тургенев", title: "Отцы и дети" },
-      { author: "Ф. М. Достоевский", title: "Преступление и наказание" },
-      { author: "Л. Н. Толстой", title: "Война и мир" },
-      { author: "А. П. Чехов", title: "Вишнёвый сад" }
+      { author: "А. Н. Островский", title: "Гроза", ready: true, href: "/works/ostrovsky-storm" },
+      { author: "И. А. Гончаров", title: "Обломов", ready: true, href: "/works/goncharov-oblomov" },
+      { author: "И. С. Тургенев", title: "Отцы и дети", ready: true, href: "/works/turgenev-fathers-and-sons" },
+      { author: "Ф. М. Достоевский", title: "Преступление и наказание", ready: true, href: "/works/dostoevsky-crime-and-punishment" },
+      { author: "Л. Н. Толстой", title: "Война и мир", ready: true, href: "/works/tolstoy-war-and-peace" },
+      { author: "А. П. Чехов", title: "Вишнёвый сад", ready: true, href: "/works/chekhov-cherry-orchard" }
     ],
     authors: ["Протопоп Аввакум", "М. В. Ломоносов", "Г. Р. Державин", "Д. И. Фонвизин", "А. Н. Радищев", "В. А. Жуковский", "А. С. Грибоедов", "А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "А. Н. Островский", "И. А. Гончаров", "И. С. Тургенев", "Н. А. Некрасов", "Ф. И. Тютчев", "А. А. Фет", "Н. С. Лесков", "М. Е. Салтыков-Щедрин", "Ф. М. Достоевский", "Л. Н. Толстой", "А. П. Чехов"]
   },
@@ -112,12 +112,12 @@ export const curriculum: GradeCurriculum[] = [
     phase: "XX век и сегодняшний разговор",
     prompt: "Поэзия, революция, война, несвобода, частная жизнь и право человека на свой голос.",
     works: [
-      { author: "М. А. Булгаков", title: "Мастер и Маргарита" },
-      { author: "М. А. Шолохов", title: "Тихий Дон" },
-      { author: "А. И. Солженицын", title: "Один день Ивана Денисовича" },
-      { author: "А. А. Ахматова", title: "Реквием" },
-      { author: "Б. Л. Пастернак", title: "Доктор Живаго" },
-      { author: "В. Г. Распутин", title: "Прощание с Матёрой" }
+      { author: "М. А. Булгаков", title: "Мастер и Маргарита", ready: true, href: "/works/bulgakov-master-and-margarita" },
+      { author: "М. А. Шолохов", title: "Тихий Дон", ready: true, href: "/works/sholokhov-quiet-don" },
+      { author: "А. И. Солженицын", title: "Один день Ивана Денисовича", ready: true, href: "/works/solzhenitsyn-one-day" },
+      { author: "А. А. Ахматова", title: "Реквием", ready: true, href: "/works/akhmatova-requiem" },
+      { author: "Б. Л. Пастернак", title: "Доктор Живаго", ready: true, href: "/works/pasternak-doctor-zhivago" },
+      { author: "В. Г. Распутин", title: "Прощание с Матёрой", ready: true, href: "/works/rasputin-farewell-matyora" }
     ],
     authors: ["И. А. Бунин", "А. И. Куприн", "М. Горький", "А. А. Блок", "В. В. Маяковский", "С. А. Есенин", "А. А. Ахматова", "М. И. Цветаева", "О. Э. Мандельштам", "Б. Л. Пастернак", "М. А. Булгаков", "А. П. Платонов", "М. А. Шолохов", "А. Т. Твардовский", "А. И. Солженицын", "В. Т. Шаламов", "В. М. Шукшин", "В. Г. Распутин", "В. П. Астафьев", "А. В. Вампилов", "И. А. Бродский"]
   }

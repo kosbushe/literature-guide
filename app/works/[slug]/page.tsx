@@ -10,10 +10,13 @@ import { seventhGradeRoutes } from "@/lib/seventh-grade";
 import { eighthGradeRoutes } from "@/lib/eighth-grade";
 import { ninthGradeRoutes } from "@/lib/ninth-grade";
 import { upperGradeAuthorProfiles } from "@/lib/upper-grade-authors";
+import { tenthGradeRoutes } from "@/lib/tenth-grade";
+import { eleventhGradeRoutes } from "@/lib/eleventh-grade";
+import { seniorAuthorProfiles } from "@/lib/senior-authors";
 
-const guideRoutes = [...fifthGradeRoutes, ...sixthGradeRoutes, ...seventhGradeRoutes, ...eighthGradeRoutes, ...ninthGradeRoutes];
-const guideBySlug = { ...fifthGradeBySlug, ...sixthGradeBySlug, ...Object.fromEntries([...seventhGradeRoutes, ...eighthGradeRoutes, ...ninthGradeRoutes].map((route) => [route.slug, route])) };
-const profiles = { ...fifthGradeAuthorProfiles, ...sixthGradeAuthorProfiles, ...upperGradeAuthorProfiles };
+const guideRoutes = [...fifthGradeRoutes, ...sixthGradeRoutes, ...seventhGradeRoutes, ...eighthGradeRoutes, ...ninthGradeRoutes, ...tenthGradeRoutes, ...eleventhGradeRoutes];
+const guideBySlug = { ...fifthGradeBySlug, ...sixthGradeBySlug, ...Object.fromEntries([...seventhGradeRoutes, ...eighthGradeRoutes, ...ninthGradeRoutes, ...tenthGradeRoutes, ...eleventhGradeRoutes].map((route) => [route.slug, route])) };
+const profiles = { ...fifthGradeAuthorProfiles, ...sixthGradeAuthorProfiles, ...upperGradeAuthorProfiles, ...seniorAuthorProfiles };
 
 export function generateStaticParams() {
   return guideRoutes.map((route) => ({ slug: route.slug }));

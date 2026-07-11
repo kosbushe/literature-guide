@@ -8,10 +8,13 @@ import { seventhGradeRoutes } from "@/lib/seventh-grade";
 import { eighthGradeRoutes } from "@/lib/eighth-grade";
 import { ninthGradeRoutes } from "@/lib/ninth-grade";
 import { upperGradeAuthorProfiles } from "@/lib/upper-grade-authors";
+import { tenthGradeRoutes } from "@/lib/tenth-grade";
+import { eleventhGradeRoutes } from "@/lib/eleventh-grade";
+import { seniorAuthorProfiles } from "@/lib/senior-authors";
 
-const guideRoutes = [...fifthGradeRoutes, ...sixthGradeRoutes, ...seventhGradeRoutes, ...eighthGradeRoutes, ...ninthGradeRoutes];
+const guideRoutes = [...fifthGradeRoutes, ...sixthGradeRoutes, ...seventhGradeRoutes, ...eighthGradeRoutes, ...ninthGradeRoutes, ...tenthGradeRoutes, ...eleventhGradeRoutes];
 const authorRoutes = (slug: string) => guideRoutes.filter((route) => route.authorSlug === slug);
-const authorProfiles = { ...fifthGradeAuthorProfiles, ...sixthGradeAuthorProfiles, ...upperGradeAuthorProfiles };
+const authorProfiles = { ...fifthGradeAuthorProfiles, ...sixthGradeAuthorProfiles, ...upperGradeAuthorProfiles, ...seniorAuthorProfiles };
 
 export function generateStaticParams() {
   return [...new Set(guideRoutes.map((route) => route.authorSlug))].map((slug) => ({ slug }));
