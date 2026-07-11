@@ -39,7 +39,7 @@ export default function TolstoyPage() {
             <p>{block.body[0]}</p>
             {block.body.length > 1 && (
               <details>
-                <summary>Ещё 20 секунд</summary>
+                <summary>Подробнее</summary>
                 <p>{block.body.slice(1).join(" ")}</p>
               </details>
             )}
