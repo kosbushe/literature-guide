@@ -12,7 +12,7 @@ const prompts: Record<number, string> = {
 const tolstoyAtAge: Record<number, string> = {
   13: "переехал из Ясной Поляны к тётке в Казань",
   14: "жил в Казани и готовился к университету с частными учителями",
-  15: "не сдал с первого раза историю и статистику — а потом пересдал"
+  15: "не сдал с первого раза историю и статистику – а потом пересдал"
 };
 
 export function AgeMirror({ compact = false }: { compact?: boolean }) {
