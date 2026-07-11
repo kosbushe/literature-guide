@@ -49,9 +49,12 @@ export default function TolstoyPage() {
       </div>
 
       <section className="next-step">
-        <p className="eyebrow">Карточек достаточно</p>
-        <h2>Теперь ты уже не входишь в текст вслепую.</h2>
-        <Link className="button button-light" href="/works/after-the-ball">Перейти к «После бала»</Link>
+        <p className="eyebrow">Выбери свой класс</p>
+        <h2>У Толстого есть<br />разные входы в текст.</h2>
+        <div className="hero-actions">
+          <Link className="button button-light" href="/works/tolstoy-caucasian-prisoner">5 класс · «Кавказский пленник»</Link>
+          <Link className="button button-light" href="/works/after-the-ball">8 класс · «После бала»</Link>
+        </div>
       </section>
     </main>
   );
