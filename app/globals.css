@@ -259,6 +259,38 @@ textarea { background: var(--paper-light); border: 1px solid var(--line); border
 .source-list span, .source-list strong { color: var(--muted); font-size: 11px; text-transform: uppercase; }
 .source-list h2 { font-size: 36px; margin: 30px 0 18px; }
 
+.season-work-hero { padding-bottom: 54px; }
+.season-work-hero h1 { font-size: clamp(64px, 10vw, 128px); max-width: 980px; }
+.season-guide-section { border-bottom: 1px solid var(--line); margin: 0 auto; max-width: var(--max); padding: 64px 28px; }
+.season-guide-section > h2 { max-width: 720px; }
+.season-context { display: grid; gap: 1px; grid-template-columns: repeat(2, 1fr); margin: 32px 0 0; max-width: 780px; }
+.season-context > div { background: var(--ink); color: white; min-height: 122px; padding: 18px; }
+.season-context > div:last-child { background: var(--green); }
+.season-context span, .season-question span, .season-author-next span { color: #d7cfbd; display: block; font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.season-context strong { display: block; font-family: Georgia, serif; font-size: clamp(24px, 3vw, 36px); font-weight: 400; line-height: 1.08; margin-top: 14px; }
+.season-context-copy { border-left: 4px solid var(--gold); margin: 28px 0 34px; max-width: 780px; padding: 4px 0 4px 18px; }
+.season-context-copy h3 { font-family: Georgia, serif; font-size: 29px; font-weight: 400; margin: 0 0 9px; }
+.season-context-copy p { color: var(--muted); font-size: 18px; margin: 0; max-width: 660px; }
+.season-signal-grid, .season-fact-grid { display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); }
+.season-signal-grid article, .season-fact-grid article { background: var(--paper-light); min-height: 198px; padding: 20px; }
+.season-signal-grid span, .season-fact-grid span { color: var(--red); font-size: 12px; font-weight: 900; }
+.season-signal-grid h3, .season-fact-grid h3 { font-family: Georgia, serif; font-size: 26px; font-weight: 400; line-height: 1.08; margin: 30px 0 10px; }
+.season-signal-grid p, .season-fact-grid p { color: var(--muted); font-size: 15px; line-height: 1.38; margin: 0; }
+.season-words { background: var(--paper-light); max-width: none; padding-left: max(28px, calc((100vw - var(--max)) / 2 + 28px)); padding-right: max(28px, calc((100vw - var(--max)) / 2 + 28px)); }
+.season-terms { display: grid; gap: 0 38px; grid-template-columns: repeat(3, 1fr); max-width: 980px; }
+.season-terms div { border-top: 1px solid var(--line); padding: 19px 0; }
+.season-terms dt { font-family: Georgia, serif; font-size: 27px; }
+.season-terms dd { color: var(--muted); font-size: 15px; line-height: 1.38; margin: 7px 0 0; }
+.season-question { background: var(--red); color: white; margin: 38px 0 0; max-width: 900px; padding: clamp(25px, 5vw, 52px); }
+.season-question span { color: var(--ink); }
+.season-question p { font-family: Georgia, serif; font-size: clamp(28px, 4vw, 52px); line-height: 1.06; margin: 20px 0 0; }
+.season-author-hero { max-width: var(--max); }
+.season-author-hero h1 { font-size: clamp(65px, 11vw, 145px); max-width: 1000px; }
+.season-author-facts { padding-bottom: 78px; }
+.season-author-next { background: var(--ink); color: white; display: grid; gap: 6px; margin-top: 36px; max-width: 680px; padding: 24px; }
+.season-author-next strong { font-family: Georgia, serif; font-size: 34px; font-weight: 400; line-height: 1.08; }
+.season-author-next a { color: #dfd2b3; font-size: 14px; font-weight: 900; margin-top: 8px; }
+
 footer { background: var(--ink); color: white; min-height: 230px; padding: 48px max(28px, calc((100vw - var(--max)) / 2 + 28px)) 34px; }
 .footer-main { align-items: end; display: flex; justify-content: space-between; }
 footer span { font-size: 14px; font-weight: 900; letter-spacing: .08em; }
@@ -323,6 +355,16 @@ footer p { color: #aaa39a; margin: 0; }
   .context-code-copy { padding: 25px 20px; }
   .context-code-points { gap: 12px; grid-template-columns: 1fr; }
   .context-code-points article + article { margin-left: 0; }
+  .season-guide-section { padding: 46px 18px; }
+  .season-context { grid-template-columns: 1fr; }
+  .season-context > div { min-height: auto; }
+  .season-context-copy h3 { font-size: 25px; }
+  .season-context-copy p { font-size: 16px; }
+  .season-signal-grid, .season-fact-grid, .season-terms { grid-template-columns: 1fr; }
+  .season-signal-grid article, .season-fact-grid article { min-height: auto; }
+  .season-signal-grid h3, .season-fact-grid h3 { margin-top: 14px; }
+  .season-words { padding-left: 18px; padding-right: 18px; }
+  .season-question { margin-top: 28px; }
   footer { padding: 40px 18px 26px; }
   .footer-main { align-items: flex-start; flex-direction: column; gap: 30px; }
   .footer-legal { flex-direction: column; gap: 8px; margin-top: 36px; }
