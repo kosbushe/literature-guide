@@ -17,18 +17,18 @@ export default function AfterTheBallPage() {
         <p className="route-line">{workRu.routeLine}</p>
         <div className="hero-actions">
           <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть рассказ</EventLink>
-          <a className="button button-ghost" href="#before">Дай мне 60 секунд</a>
+          <a className="button button-ghost" href="#before">Дай мне контекст</a>
         </div>
         <p className="micro">Откроется в новой вкладке · никаких регистраций</p>
       </section>
 
       <section className="reading-section before" id="before">
-        <p className="eyebrow">До чтения · 60 секунд</p>
+        <p className="eyebrow">Перед чтением</p>
         <h2>Сначала пойми,<br />куда ты попал.</h2>
         <section className="epoch-context" aria-label="Россия 1840-х годов">
           <div className="epoch-title"><span>Россия · 1840-е</span><strong>У тебя 4G.<br />У Ивана — лошадь, письмо и статус.</strong></div>
           <div className="epoch-grid">
-            {workRu.before.epoch.map((item) => <article key={item.title}><span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}
+            {workRu.before.epoch.map((item) => <article key={item.title}><span>{item.label}</span><h3>{item.title}</h3></article>)}
           </div>
         </section>
         <ContextCodeCard card={workRu.before.contextCard} />
