@@ -38,7 +38,7 @@ export function ReadingPulse() {
       {answer === "reading" && <p className="response">Отлично. Больше не отвлекаем.</p>}
       {answer === "later" && <p className="response">Хорошо. Рассказ будет ждать здесь.</p>}
       {answer === "broken" && <p className="response">Ссылку проверим. Пока открой текст из учебника.</p>}
-      {answer === "declined" && <p className="response">Это тоже честный ответ. Нам важно понять — почему.</p>}
+      {answer === "declined" && <p className="response">Это тоже честный ответ. Нам важно понять – почему.</p>}
     </section>
   );
 }
