@@ -1,0 +1,32 @@
+const links: Record<string, string> = {
+  "Русская народная сказка": "/authors/russian-folk-tale",
+  "Русская былина": "/authors/russian-byliny",
+  "И. А. Крылов": "/authors/ivan-krylov",
+  "А. С. Пушкин": "/authors/alexander-pushkin",
+  "М. Ю. Лермонтов": "/authors/mikhail-lermontov",
+  "Н. В. Гоголь": "/authors/nikolai-gogol",
+  "И. С. Тургенев": "/authors/ivan-turgenev",
+  "Л. Н. Толстой": "/authors/leo-tolstoy",
+  "А. П. Чехов": "/authors/anton-chekhov",
+  "Н. А. Некрасов": "/authors/nikolai-nekrasov",
+  "Н. С. Лесков": "/authors/nikolai-leskov",
+  "А. С. Грин": "/authors/alexander-green",
+  "В. П. Астафьев": "/authors/viktor-astafyev",
+  "В. Г. Распутин": "/authors/valentin-rasputin",
+  "Ф. А. Искандер": "/authors/fazil-iskander",
+  "М. Е. Салтыков-Щедрин": "/authors/mikhail-saltykov-shchedrin",
+  "А. Т. Твардовский": "/authors/alexander-tvardovsky",
+  "Д. И. Фонвизин": "/authors/denis-fonvizin",
+  "Н. М. Карамзин": "/authors/nikolai-karamzin",
+  "А. С. Грибоедов": "/authors/alexander-griboyedov",
+  "Ф. М. Достоевский": "/authors/fyodor-dostoevsky",
+  "М. А. Булгаков": "/authors/mikhail-bulgakov",
+  "А. Н. Островский": "/authors/alexander-ostrovsky",
+  "И. А. Гончаров": "/authors/ivan-goncharov",
+  "М. А. Шолохов": "/authors/mikhail-sholokhov",
+  "А. И. Солженицын": "/authors/alexander-solzhenitsyn",
+  "А. А. Ахматова": "/authors/anna-akhmatova",
+  "Б. Л. Пастернак": "/authors/boris-pasternak"
+};
+
+export const authorLink = (name: string) => links[name];

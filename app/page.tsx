@@ -1,4 +1,6 @@
 import { GradeNavigator } from "@/components/GradeNavigator";
+import Link from "next/link";
+import { authorLink } from "@/lib/author-links";
 import { curriculum } from "@/lib/curriculum";
 
 export default function Home() {
@@ -14,7 +16,12 @@ export default function Home() {
           {curriculum.map((item) => (
             <details key={item.grade}>
               <summary><span>{item.grade}</span><strong>{item.phase}</strong><small>{item.authors.length} авторов</small></summary>
-              <div>{item.authors.map((author) => <span key={author}>{author}</span>)}</div>
+              <div>
+                {item.authors.map((author) => {
+                  const href = authorLink(author);
+                  return href ? <Link className="author-chip" href={href} key={author}>{author}</Link> : <span aria-label={`${author}: карточка готовится`} className="author-chip author-chip-soon" key={author}>{author}<small>скоро</small></span>;
+                })}
+              </div>
             </details>
           ))}
         </div>
