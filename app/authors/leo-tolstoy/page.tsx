@@ -27,7 +27,7 @@ export default function TolstoyPage() {
 
       <section className="passport-intro" id="cards">
         <p className="eyebrow">10 коротких карточек</p>
-        <h2>Сначала — человек.<br />Потом — книга.</h2>
+        <h2>Сначала – человек.<br />Потом – книга.</h2>
         <p>Не надо учить биографию. Просто листай: каждая карточка даёт один ключ к «После бала».</p>
       </section>
 
