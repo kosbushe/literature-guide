@@ -32,5 +32,7 @@ for (const block of authorRu.passport) {
 
 const fifthGradeBlock = curriculum.match(/grade: 5,[\s\S]*?authors:/)?.[0] ?? "";
 assert.equal((fifthGradeBlock.match(/ready: true/g) ?? []).length, 9, "Fifth grade must have nine ready first-season routes");
+const sixthGradeBlock = curriculum.match(/grade: 6,[\s\S]*?authors:/)?.[0] ?? "";
+assert.equal((sixthGradeBlock.match(/ready: true/g) ?? []).length, 12, "Sixth grade must have twelve ready routes");
 
-console.log("Content validation passed: Tolstoy + After the Ball + fifth grade");
+console.log("Content validation passed: Tolstoy + After the Ball + fifth and sixth grades");

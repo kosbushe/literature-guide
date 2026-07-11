@@ -36,12 +36,18 @@ export const curriculum: GradeCurriculum[] = [
     phase: "Герой, выбор, справедливость",
     prompt: "Начинаются характеры, конфликты и настоящая цена поступка.",
     works: [
-      { author: "А. С. Пушкин", title: "Дубровский" },
-      { author: "Н. В. Гоголь", title: "Повести из цикла «Вечера на хуторе…»" },
-      { author: "И. С. Тургенев", title: "Бежин луг" },
-      { author: "Н. С. Лесков", title: "Левша" },
-      { author: "А. П. Чехов", title: "Толстый и тонкий" },
-      { author: "В. Г. Распутин", title: "Уроки французского" }
+      { author: "А. С. Пушкин", title: "Дубровский", ready: true, href: "/works/pushkin-dubrovsky" },
+      { author: "М. Ю. Лермонтов", title: "«Тучи», «Листок», «Утёс»", ready: true, href: "/works/lermontov-lyrics" },
+      { author: "Н. В. Гоголь", title: "«Вечера на хуторе близ Диканьки»", ready: true, href: "/works/gogol-evenings" },
+      { author: "И. С. Тургенев", title: "Бежин луг", ready: true, href: "/works/turgenev-bezhin-meadow" },
+      { author: "Н. А. Некрасов", title: "Железная дорога", ready: true, href: "/works/nekrasov-railway" },
+      { author: "Н. С. Лесков", title: "Левша", ready: true, href: "/works/leskov-lefty" },
+      { author: "Л. Н. Толстой", title: "Детство", ready: true, href: "/works/tolstoy-childhood" },
+      { author: "А. П. Чехов", title: "Толстый и тонкий", ready: true, href: "/works/chekhov-thick-and-thin" },
+      { author: "А. С. Грин", title: "Алые паруса", ready: true, href: "/works/green-scarlet-sails" },
+      { author: "В. П. Астафьев", title: "Конь с розовой гривой", ready: true, href: "/works/astafyev-horse-with-pink-mane" },
+      { author: "В. Г. Распутин", title: "Уроки французского", ready: true, href: "/works/rasputin-french-lessons" },
+      { author: "Ф. А. Искандер", title: "Тринадцатый подвиг Геракла", ready: true, href: "/works/iskander-thirteenth-labor" }
     ],
     authors: ["А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "Н. А. Некрасов", "Н. С. Лесков", "Л. Н. Толстой", "А. П. Чехов", "А. С. Грин", "В. П. Астафьев", "В. Г. Распутин", "Ф. А. Искандер"]
   },

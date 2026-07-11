@@ -2,23 +2,29 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AgeMirror } from "@/components/AgeMirror";
 import { AuthorPortrait } from "@/components/AuthorPortrait";
-import { fifthGradeAuthorProfiles, fifthGradeAuthors, fifthGradeRoutes } from "@/lib/fifth-grade";
+import { fifthGradeAuthorProfiles, fifthGradeRoutes } from "@/lib/fifth-grade";
+import { sixthGradeAuthorProfiles, sixthGradeRoutes } from "@/lib/sixth-grade";
+
+const guideRoutes = [...fifthGradeRoutes, ...sixthGradeRoutes];
+const authorRoutes = (slug: string) => guideRoutes.filter((route) => route.authorSlug === slug);
+const authorProfiles = { ...fifthGradeAuthorProfiles, ...sixthGradeAuthorProfiles };
 
 export function generateStaticParams() {
-  return fifthGradeRoutes.map((route) => ({ slug: route.authorSlug }));
+  return [...new Set(guideRoutes.map((route) => route.authorSlug))].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const route = fifthGradeAuthors[slug];
+  const route = authorRoutes(slug)[0];
   return route ? { title: route.author } : {};
 }
 
-export default async function FifthGradeAuthorPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function AuthorPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const route = fifthGradeAuthors[slug];
-  if (!route) notFound();
-  const profile = fifthGradeAuthorProfiles[slug];
+  const routes = authorRoutes(slug);
+  const route = routes[0];
+  const profile = authorProfiles[slug];
+  if (!route || !profile) notFound();
   const passport = [
     ...profile.passport.slice(0, 5),
     { title: "Мир вокруг", text: route.era },
@@ -63,9 +69,9 @@ export default async function FifthGradeAuthorPage({ params }: { params: Promise
 
       <section className="next-step">
         <p className="eyebrow">Теперь – книга</p>
-        <h2>Готов к<br />«{route.work}»?</h2>
+        <h2>{routes.length > 1 ? <>Выбери<br /><em>произведение.</em></> : <>Готов к<br />«{route.work}»?</>}</h2>
         <div className="hero-actions">
-          <Link className="button button-light" href={`/works/${route.slug}`}>Открыть маршрут чтения</Link>
+          {routes.map((item) => <Link className="button button-light" href={`/works/${item.slug}`} key={item.slug}>{routes.length > 1 ? item.work : "Открыть маршрут чтения"}</Link>)}
         </div>
       </section>
     </main>

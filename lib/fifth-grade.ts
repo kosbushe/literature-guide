@@ -1,6 +1,6 @@
 import type { AgeMirrorProfile } from "@/lib/age-mirror";
 
-export type FifthGradeRoute = {
+export type GuideRoute = {
   slug: string;
   authorSlug: string;
   category: string;
@@ -12,7 +12,7 @@ export type FifthGradeRoute = {
   era: string;
   hook: string;
   authorIntro: string;
-  authorFacts: { label: string; text: string }[];
+  authorFacts?: { label: string; text: string }[];
   contextTitle: string;
   contextText: string;
   signals: { title: string; text: string }[];
@@ -22,7 +22,7 @@ export type FifthGradeRoute = {
   moreToRead?: string;
 };
 
-export const fifthGradeRoutes: FifthGradeRoute[] = [
+export const fifthGradeRoutes: GuideRoute[] = [
   {
     slug: "russian-folk-tale",
     authorSlug: "russian-folk-tale",
@@ -319,7 +319,7 @@ type Portrait = {
   src?: string;
 };
 
-type AuthorProfile = {
+export type AuthorProfile = {
   firstName: string;
   age: number;
   eyebrow: string;

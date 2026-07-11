@@ -1,20 +1,24 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fifthGradeBySlug, fifthGradeRoutes } from "@/lib/fifth-grade";
+import { sixthGradeBySlug, sixthGradeRoutes } from "@/lib/sixth-grade";
+
+const guideRoutes = [...fifthGradeRoutes, ...sixthGradeRoutes];
+const guideBySlug = { ...fifthGradeBySlug, ...sixthGradeBySlug };
 
 export function generateStaticParams() {
-  return fifthGradeRoutes.map((route) => ({ slug: route.slug }));
+  return guideRoutes.map((route) => ({ slug: route.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const route = fifthGradeBySlug[slug];
+  const route = guideBySlug[slug];
   return route ? { title: `${route.work} – маршрут чтения` } : {};
 }
 
-export default async function FifthGradeWorkPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const route = fifthGradeBySlug[slug];
+  const route = guideBySlug[slug];
   if (!route) notFound();
 
   return (
