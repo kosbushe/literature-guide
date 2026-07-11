@@ -10,14 +10,20 @@ export default function AfterTheBallPage() {
     <main>
       <section className="work-hero">
         <p className="eyebrow">Лев Толстой · маршрут чтения</p>
+        <p className="hero-kicker">Сначала вопрос. Потом — текст.</p>
         <h1>После<br /><em>бала</em></h1>
         <p className="lead">{workRu.teaser}</p>
         <p className="route-line">{workRu.routeLine}</p>
+        <div className="hero-actions">
+          <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть рассказ</EventLink>
+          <a className="button button-ghost" href="#before">Дай мне 60 секунд</a>
+        </div>
+        <p className="micro">Откроется в новой вкладке · никаких регистраций</p>
       </section>
 
-      <section className="reading-section before">
+      <section className="reading-section before" id="before">
         <p className="eyebrow">До чтения · 60 секунд</p>
-        <h2>{workRu.before.title}</h2>
+        <h2>Четыре слова.<br />И можно в текст.</h2>
         <div className="character-grid">
           {workRu.before.characters.map((character) => (
             <article key={character.name}><h3>{character.name}</h3><p>{character.description}</p></article>
