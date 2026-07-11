@@ -20,7 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <footer>
           <span>ЛИТЕРАТУРА.ГАЙД</span>
-          <p>Сначала контекст. Потом текст. Вывод — твой.</p>
+          <p>Сначала контекст. Потом текст. Вывод – твой.</p>
         </footer>
       </body>
     </html>
