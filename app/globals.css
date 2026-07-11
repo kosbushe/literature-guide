@@ -361,8 +361,9 @@ footer p { color: #aaa39a; margin: 0; }
   .split-card { grid-template-columns: 1fr; }
   .route-facts { margin-top: 20px; }
   .work-hero { background: linear-gradient(115deg, transparent 0 66%, rgba(162, 137, 84, .26) 66.1% 66.3%, transparent 66.4%), repeating-linear-gradient(0deg, transparent 0 58px, rgba(162, 137, 84, .1) 59px 60px), var(--ink); padding-left: 18px; padding-right: 18px; }
-  .work-hero-with-cover { display: block; }
-  .book-cover { display: none; }
+  .work-hero-with-cover { align-items: center; display: flex; flex-direction: column; }
+  .work-hero-copy { width: 100%; }
+  .book-cover { margin-top: 30px; max-width: 156px; transform: rotate(1deg); }
   .epoch-title { align-items: flex-start; flex-direction: column; gap: 12px; }
   .epoch-grid { grid-template-columns: 1fr; }
   .context-code-card { grid-template-columns: 1fr; }
