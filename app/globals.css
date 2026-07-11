@@ -286,25 +286,10 @@ textarea { background: var(--paper-light); border: 1px solid var(--line); border
 .season-question p { font-family: Georgia, serif; font-size: clamp(28px, 4vw, 52px); line-height: 1.06; margin: 20px 0 0; }
 .season-author-hero { max-width: var(--max); }
 .season-author-hero h1 { font-size: clamp(65px, 11vw, 145px); max-width: 1000px; }
-.season-author-profile-hero { padding-bottom: 64px; }
-.season-author-profile-hero h1 { font-size: clamp(66px, 9vw, 135px); }
-.season-author-portrait { margin: 0; max-width: 480px; width: 100%; }
-.season-portrait-image-wrap { background: var(--green); min-height: 480px; overflow: hidden; position: relative; }
-.season-portrait-image-wrap::after { background: linear-gradient(135deg, transparent 0 74%, rgba(174, 143, 84, .55) 74.1% 74.6%, transparent 74.7%); content: ""; inset: 0; pointer-events: none; position: absolute; }
-.season-portrait-image-wrap img { display: block; filter: grayscale(1) sepia(.24) contrast(1.05); height: 100%; object-fit: cover; position: absolute; width: 100%; }
-.season-portrait-symbol { align-content: center; background: repeating-linear-gradient(0deg, transparent 0 52px, rgba(223,210,179,.12) 53px 54px), var(--green); color: var(--paper-light); display: grid; height: 100%; justify-items: center; min-height: 480px; padding: 30px; text-align: center; }
-.season-portrait-symbol span { border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); display: grid; font-family: Georgia, serif; font-size: 76px; height: 180px; place-items: center; width: 180px; }
-.season-portrait-symbol strong { font-family: Georgia, serif; font-size: 28px; font-weight: 400; margin-top: 24px; }
-.season-portrait-mark { background: var(--red); bottom: 0; color: white; font-size: 11px; font-weight: 900; left: 0; letter-spacing: .12em; padding: 11px 14px; position: absolute; text-transform: uppercase; z-index: 1; }
-.season-author-portrait figcaption { border: 1px solid var(--line); border-top: 0; display: grid; gap: 5px; padding: 14px 16px; }
-.season-author-portrait figcaption strong { font-size: 15px; }
-.season-author-portrait figcaption small { color: var(--muted); font-size: 11px; line-height: 1.35; }
-.season-passport-grid .passport-card:nth-child(3n + 3) { background: var(--green); }
-.season-passport-grid .passport-card:nth-child(3n + 3) .card-index { color: #dfd2b3; }
-.season-author-facts { padding-bottom: 78px; }
-.season-author-next { background: var(--ink); color: white; display: grid; gap: 6px; margin-top: 36px; max-width: 680px; padding: 24px; }
-.season-author-next strong { font-family: Georgia, serif; font-size: 34px; font-weight: 400; line-height: 1.08; }
-.season-author-next a { color: #dfd2b3; font-size: 14px; font-weight: 900; margin-top: 8px; }
+.portrait-symbol { align-content: center; background: repeating-linear-gradient(0deg, transparent 0 52px, rgba(223,210,179,.12) 53px 54px), var(--green); color: var(--paper-light); display: grid; height: 100%; justify-items: center; min-height: 420px; padding: 30px; text-align: center; }
+.portrait-symbol span { border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); display: grid; font-family: Georgia, serif; font-size: 76px; height: 180px; place-items: center; width: 180px; }
+.portrait-symbol strong { font-family: Georgia, serif; font-size: 28px; font-weight: 400; margin-top: 24px; }
+.author-profile-hero .tolstoy-portrait img { aspect-ratio: 4 / 5; object-fit: cover; }
 
 footer { background: var(--ink); color: white; min-height: 230px; padding: 48px max(28px, calc((100vw - var(--max)) / 2 + 28px)) 34px; }
 .footer-main { align-items: end; display: flex; justify-content: space-between; }
@@ -349,8 +334,7 @@ footer p { color: #aaa39a; margin: 0; }
   .author-profile-hero .tolstoy-portrait { justify-self: stretch; order: -1; }
   .author-profile-hero .portrait-image-wrap { max-height: 420px; }
   .author-profile-hero .portrait-image-wrap img { margin-top: -45px; }
-  .season-author-portrait { justify-self: stretch; }
-  .season-portrait-image-wrap, .season-portrait-symbol { min-height: 360px; }
+  .portrait-symbol { min-height: 360px; }
   .quick-facts { margin-top: 22px; }
   .quick-facts span { padding: 12px 10px; }
   .quick-facts b { font-size: 12px; }
