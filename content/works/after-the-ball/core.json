@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "after-the-ball",
+  "kind": "work",
+  "authorId": "leo-tolstoy",
+  "writtenYear": 1903,
+  "firstPublishedYear": 1911,
+  "status": "fact_checked_draft",
+  "targetAge": { "min": 13, "max": 15, "grade": 8 },
+  "fullTextUrl": "https://ru.wikisource.org/wiki/После_бала_(Толстой)",
+  "sourceIds": ["tolstoy-ru-volume-34", "tolstoy-museum-after-ball", "wikisource-after-ball"]
+}

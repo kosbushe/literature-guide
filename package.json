@@ -1,0 +1,24 @@
+{
+  "name": "literature-guide",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Вход в классическую литературу через человека, эпоху и личный вопрос подростка.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run validate:content && next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "validate:content": "node scripts/validate-content.mjs"
+  },
+  "dependencies": {
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "typescript": "6.0.3"
+  }
+}

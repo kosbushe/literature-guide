@@ -1,0 +1,10 @@
+{
+  "id": "imperial-russian-recruitment",
+  "kind": "context",
+  "period": { "from": 1834, "to": 1855 },
+  "universal": false,
+  "localeSpecific": ["ru"],
+  "summaryRu": "В 1840-е рекрут из податного сословия отправлялся на двадцать лет действительной службы и ещё пять лет числился в запасе.",
+  "keyPointRu": "Для богатого студента армия могла быть карьерой; для рекрута — почти вся взрослая жизнь по приказу.",
+  "sourceIds": ["bre-recruitment"]
+}

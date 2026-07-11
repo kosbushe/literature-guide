@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "leo-tolstoy",
+  "kind": "author",
+  "originalName": "Лев Николаевич Толстой",
+  "birthDate": "1828-09-09",
+  "deathDate": "1910-11-20",
+  "status": "fact_checked_draft",
+  "publishedLocales": ["ru"],
+  "plannedLocales": ["en", "es", "fr"],
+  "ageSnapshots": [
+    { "age": 13, "year": 1841, "sourceIds": ["tolstoy-museum-biography"] },
+    { "age": 14, "year": 1842, "sourceIds": ["tolstoy-museum-biography"] },
+    { "age": 15, "year": 1843, "sourceIds": ["tolstoy-museum-biography"] }
+  ],
+  "sourceIds": ["tolstoy-ru-chronology", "tolstoy-museum-after-ball", "tolstoy-ru-volume-34"]
+}

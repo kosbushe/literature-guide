@@ -1,0 +1,10 @@
+{
+  "id": "running-the-gauntlet",
+  "kind": "context",
+  "period": { "from": 1839, "to": 1863 },
+  "universal": false,
+  "localeSpecific": ["ru"],
+  "summaryRu": "Предусмотренное законом военное наказание: человека вели между двумя рядами солдат, каждый из которых обязан был ударить его прутом.",
+  "keyPointRu": "Жестокость совершает не один человек, а дисциплинированная система.",
+  "sourceIds": ["military-history-punishment"]
+}
