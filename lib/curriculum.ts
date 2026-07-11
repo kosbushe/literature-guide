@@ -19,14 +19,17 @@ export const curriculum: GradeCurriculum[] = [
     phase: "Первый вход в классику",
     prompt: "Сказки, приключения, первая большая проза.",
     works: [
-      { author: "А. С. Пушкин", title: "Руслан и Людмила" },
-      { author: "М. Ю. Лермонтов", title: "Бородино" },
-      { author: "Н. В. Гоголь", title: "Ночь перед Рождеством" },
-      { author: "И. С. Тургенев", title: "Муму" },
-      { author: "Л. Н. Толстой", title: "Кавказский пленник" },
-      { author: "П. П. Бажов", title: "Медной горы Хозяйка" }
+      { author: "Народная традиция", title: "Царевна-лягушка", ready: true, href: "/works/russian-folk-tale" },
+      { author: "Народная традиция", title: "Илья Муромец и Соловей-разбойник", ready: true, href: "/works/bylina-ilya-muromets" },
+      { author: "И. А. Крылов", title: "Волк и Ягнёнок", ready: true, href: "/works/krylov-wolf-and-lamb" },
+      { author: "А. С. Пушкин", title: "Сказка о мёртвой царевне", ready: true, href: "/works/pushkin-dead-princess" },
+      { author: "М. Ю. Лермонтов", title: "Бородино", ready: true, href: "/works/lermontov-borodino" },
+      { author: "Н. В. Гоголь", title: "Ночь перед Рождеством", ready: true, href: "/works/gogol-night-before-christmas" },
+      { author: "И. С. Тургенев", title: "Муму", ready: true, href: "/works/turgenev-mumu" },
+      { author: "Л. Н. Толстой", title: "Кавказский пленник", ready: true, href: "/works/tolstoy-caucasian-prisoner" },
+      { author: "А. П. Чехов", title: "Каштанка", ready: true, href: "/works/chekhov-kashtanka" }
     ],
-    authors: ["И. А. Крылов", "В. А. Жуковский", "А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "Н. А. Некрасов", "Л. Н. Толстой", "А. П. Чехов", "П. П. Бажов", "К. Г. Паустовский", "С. Я. Маршак"]
+    authors: ["Русская народная сказка", "Русская былина", "И. А. Крылов", "А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "Л. Н. Толстой", "А. П. Чехов"]
   },
   {
     grade: 6,
