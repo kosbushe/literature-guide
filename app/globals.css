@@ -221,10 +221,12 @@ textarea { background: var(--paper-light); border: 1px solid var(--line); border
 .epoch-title { align-items: end; display: flex; gap: 24px; justify-content: space-between; margin-bottom: 20px; }
 .epoch-title span { color: #dfd2b3; font-size: 12px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .epoch-title strong { font-family: Georgia, serif; font-size: clamp(24px, 3vw, 38px); font-weight: 400; letter-spacing: -.04em; line-height: 1.02; max-width: 520px; }
+.epoch-intro { border-top: 1px solid rgba(255,255,255,.2); color: #dfd2b3; font-size: 16px; margin: 0; padding: 14px 0 20px; }
 .epoch-grid { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); }
 .epoch-grid article { background: rgba(255,255,255,.08); padding: 15px 18px; }
 .epoch-grid article > span { color: #dfd2b3; font-size: 11px; font-weight: 900; letter-spacing: .1em; }
 .epoch-grid h3 { font-family: Georgia, serif; font-size: 21px; font-weight: 400; margin: 7px 0 0; }
+.epoch-grid p { color: #d7cfbd; font-size: 14px; line-height: 1.35; margin: 10px 0 0; }
 .context-code-card { background: var(--paper-light); border: 1px solid var(--line); display: grid; grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr); margin: 42px 0; }
 .context-code-image { min-height: 100%; overflow: hidden; position: relative; }
 .context-code-image img { display: block; height: 100%; min-height: 360px; object-fit: cover; width: 100%; }

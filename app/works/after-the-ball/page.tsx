@@ -3,6 +3,7 @@ import { ContextCodeCard } from "@/components/ContextCodeCard";
 import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
 import { BookCover } from "@/components/BookCover";
+import { TimeContext } from "@/components/TimeContext";
 import { workCore, workRu } from "@/lib/content";
 import Link from "next/link";
 
@@ -31,12 +32,7 @@ export default function AfterTheBallPage() {
       <section className="reading-section before" id="before">
         <p className="eyebrow">Перед чтением</p>
         <h2>Сначала пойми,<br />куда ты попал.</h2>
-        <section className="epoch-context" aria-label="Россия 1840-х годов">
-          <div className="epoch-title"><span>Россия · 1840-е</span><strong>У тебя 4G.<br />У Ивана – лошадь, письмо и статус.</strong></div>
-          <div className="epoch-grid">
-            {workRu.before.epoch.map((item) => <article key={item.title}><span>{item.label}</span><h3>{item.title}</h3></article>)}
-          </div>
-        </section>
+        <TimeContext year="1840-е" era="Россия, бал, чин и правила сословий" />
         <ContextCodeCard card={workRu.before.contextCard} />
         <h3 className="section-label">Люди в этой сцене</h3>
         <div className="character-grid">

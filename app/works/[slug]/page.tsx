@@ -5,6 +5,7 @@ import { EventLink } from "@/components/EventLink";
 import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
 import { BookCover } from "@/components/BookCover";
+import { TimeContext } from "@/components/TimeContext";
 import { fifthGradeAuthorProfiles, fifthGradeBySlug, fifthGradeRoutes } from "@/lib/fifth-grade";
 import { sixthGradeAuthorProfiles, sixthGradeBySlug, sixthGradeRoutes } from "@/lib/sixth-grade";
 import { seventhGradeRoutes } from "@/lib/seventh-grade";
@@ -37,7 +38,6 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const terms = route.terms.length >= 4 ? route.terms : [...route.terms, { term: "Деталь", text: "Небольшая подробность, которая помогает увидеть главный выбор героя." }];
   const characters = route.characters ?? [{ name: route.author, description: route.authorIntro }, { name: "Главный конфликт", description: route.contextTitle }, { name: "Твой вопрос", description: route.question }];
   const stops = route.signals.slice(0, 3).map((signal, index) => ({ stop: ["На старте", "В середине", "После финала"][index], question: signal.title, hint: signal.text }));
-  const epoch = [{ label: "ВРЕМЯ", title: route.year }, { label: "МИР", title: route.era }, ...route.signals.slice(0, 2).map((signal) => ({ label: "СМОТРИ", title: signal.title }))];
 
   return (
     <main>
@@ -61,12 +61,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       <section className="reading-section before" id="before">
         <p className="eyebrow">Перед чтением</p>
         <h2>Сначала пойми,<br />куда ты попал.</h2>
-        <section className="epoch-context" aria-label={`Эпоха произведения «${route.work}»`}>
-          <div className="epoch-title"><span>{route.year} · контекст</span><strong>У тебя экран и поиск.<br />У героев – свой мир и свои правила.</strong></div>
-          <div className="epoch-grid">
-            {epoch.map((item) => <article key={`${item.label}-${item.title}`}><span>{item.label}</span><h3>{item.title}</h3></article>)}
-          </div>
-        </section>
+        <TimeContext year={route.year} era={route.era} />
         <ContextCodeCard imageAlt={profile?.portrait.alt} imageSrc={profile?.portrait.src} card={{ code: "КОД ТЕКСТА · 01", title: route.contextTitle, thesis: route.contextText, points: route.signals }} />
         <h3 className="section-label">Люди в этой истории</h3>
         <div className="character-grid">
