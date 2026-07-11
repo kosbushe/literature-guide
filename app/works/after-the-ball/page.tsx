@@ -23,13 +23,20 @@ export default function AfterTheBallPage() {
 
       <section className="reading-section before" id="before">
         <p className="eyebrow">До чтения · 60 секунд</p>
-        <h2>Четыре слова.<br />И можно в текст.</h2>
+        <h2>Сначала пойми,<br />куда ты попал.</h2>
+        <section className="epoch-context" aria-label="Россия 1840-х годов">
+          <div className="epoch-title"><span>Россия · 1840-е</span><strong>У тебя 4G.<br />У Ивана — лошадь, письмо и статус.</strong></div>
+          <div className="epoch-grid">
+            {workRu.before.epoch.map((item) => <article key={item.title}><span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}
+          </div>
+        </section>
+        <h3 className="section-label">Люди в этой сцене</h3>
         <div className="character-grid">
           {workRu.before.characters.map((character) => (
             <article key={character.name}><h3>{character.name}</h3><p>{character.description}</p></article>
           ))}
         </div>
-        <h3 className="section-label">Четыре слова</h3>
+        <h3 className="section-label">Четыре слова, без которых текст будет чужим</h3>
         <dl className="terms">
           {workRu.before.terms.map((item) => (
             <div key={item.term}><dt>{item.term}</dt><dd>{item.description}</dd></div>
