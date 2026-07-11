@@ -19,10 +19,18 @@ export default async function FifthGradeAuthorPage({ params }: { params: Promise
   const route = fifthGradeAuthors[slug];
   if (!route) notFound();
   const profile = fifthGradeAuthorProfiles[slug];
+  const passport = [
+    ...profile.passport.slice(0, 5),
+    { title: "Мир вокруг", text: route.era },
+    { title: route.contextTitle, text: route.contextText },
+    { title: route.signals[0].title, text: route.signals[0].text },
+    { title: route.signals[1].title, text: route.signals[1].text },
+    { title: "После чтения", text: route.question }
+  ];
 
   return (
     <main>
-      <section className="author-hero author-profile-hero season-author-profile-hero">
+      <section className="author-hero author-profile-hero">
         <div>
           <p className="eyebrow">{profile.eyebrow}</p>
           <p className="hero-kicker">{profile.kicker}</p>
@@ -34,7 +42,7 @@ export default async function FifthGradeAuthorPage({ params }: { params: Promise
           <AgeMirror compact profile={profile.ageMirror} />
           <Link className="button" href="#cards">Листать историю</Link>
         </div>
-        <AuthorPortrait {...profile.portrait} />
+        <AuthorPortrait {...profile.portrait} ageMark={profile.age ? String(profile.age) : "∞"} />
       </section>
 
       <section className="passport-intro" id="cards">
@@ -43,23 +51,22 @@ export default async function FifthGradeAuthorPage({ params }: { params: Promise
         <p>{route.authorIntro}</p>
       </section>
 
-      <div className="passport-card-grid season-passport-grid">
-        {profile.passport.map((card, index) => (
+      <div className="passport-card-grid">
+        {passport.map((card, index) => (
           <article className="passport-card" key={card.title}>
-            <p className="card-index">{String(index + 1).padStart(2, "0")} / {String(profile.passport.length).padStart(2, "0")}</p>
+            <p className="card-index">{String(index + 1).padStart(2, "0")} / 10</p>
             <h2>{card.title}</h2>
             <p>{card.text}</p>
           </article>
         ))}
       </div>
 
-      <section className="season-guide-section season-author-facts">
-        <p className="eyebrow">Связь с текстом</p>
-        <h2>Зачем это<br /><em>знать перед чтением.</em></h2>
-        <div className="season-fact-grid">
-          {route.authorFacts.map((fact, index) => <article key={fact.label}><span>0{index + 1}</span><h3>{fact.label}</h3><p>{fact.text}</p></article>)}
+      <section className="next-step">
+        <p className="eyebrow">Теперь – книга</p>
+        <h2>Готов к<br />«{route.work}»?</h2>
+        <div className="hero-actions">
+          <Link className="button button-light" href={`/works/${route.slug}`}>Открыть маршрут чтения</Link>
         </div>
-        <div className="season-author-next"><span>Сейчас читаем</span><strong>{route.work}</strong><Link href={`/works/${route.slug}`}>Открыть маршрут →</Link></div>
       </section>
     </main>
   );
