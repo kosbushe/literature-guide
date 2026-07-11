@@ -106,8 +106,8 @@ button.button { cursor: pointer; }
 .quick-facts span { background: var(--ink); color: #cfc7bc; font-size: 12px; line-height: 1.25; padding: 15px 13px; }
 .quick-facts b { color: white; display: block; font-size: 14px; margin-top: 5px; }
 .age-mirror.compact { background: var(--paper-light); border-left: 4px solid var(--gold); margin: 22px 0 0; max-width: 720px; padding: 16px 18px; }
-.age-slider-label { align-items: baseline; display: flex; font-size: 18px; font-weight: 900; justify-content: space-between; }
-.age-slider-label small { color: var(--muted); font-size: 12px; font-weight: 700; }
+.age-slider-label { display: block; font-size: 18px; font-weight: 900; }
+.age-slider-label small { color: var(--muted); display: block; font-size: 12px; font-weight: 700; margin-top: 2px; }
 .age-ticks { display: flex; font-size: 13px; font-weight: 900; justify-content: space-between; margin-top: -5px; }
 .age-result { background: var(--green); color: white; display: grid; gap: 4px; margin-top: 12px; padding: 13px 15px; }
 .age-result span { color: #d7cfbd; font-size: 12px; font-weight: 800; text-transform: uppercase; }
