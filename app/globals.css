@@ -39,17 +39,19 @@ main { overflow: hidden; }
 .hero, .author-hero, .work-hero, .simple-hero {
   margin: 0 auto;
   max-width: var(--max);
-  padding: 92px 28px 110px;
+  padding: 54px 28px 64px;
 }
-.hero { display: grid; gap: 60px; grid-template-columns: minmax(0, 1.4fr) minmax(260px, .6fr); }
+.hero { align-items: center; display: grid; gap: 34px; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .88fr); }
 .eyebrow { color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .14em; margin: 0 0 20px; text-transform: uppercase; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.04em; line-height: .96; }
-h1 { font-size: clamp(62px, 9vw, 126px); margin-bottom: 38px; }
+h1 { font-size: clamp(62px, 9vw, 126px); margin-bottom: 24px; }
 h1 em, h2 em { color: var(--red); font-weight: 400; }
-h2 { font-size: clamp(42px, 6vw, 76px); margin-bottom: 32px; }
+h2 { font-size: clamp(42px, 6vw, 76px); margin-bottom: 22px; }
 h3 { line-height: 1.2; }
 .lead { font-size: clamp(20px, 2.4vw, 28px); line-height: 1.35; max-width: 760px; }
+.hero-kicker { color: var(--muted); font-size: 17px; font-weight: 800; line-height: 1.3; margin-bottom: 15px; max-width: 570px; }
+.hero-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; }
 .button {
   background: var(--red);
   border: 1px solid var(--red);
@@ -67,14 +69,20 @@ button.button { cursor: pointer; }
 .button-light { background: var(--paper-light); border-color: var(--paper-light); color: var(--ink); }
 .text-link { font-weight: 700; }
 .micro { color: var(--muted); font-size: 13px; margin: 14px 0 0; }
-.hero-mark { align-self: center; display: grid; gap: 20px; justify-items: center; }
-.hero-mark span { font-size: clamp(40px, 6vw, 72px); font-weight: 900; letter-spacing: -.08em; }
-.hero-mark i { background: var(--red); display: block; height: 120px; transform: rotate(15deg); width: 14px; }
+.tolstoy-portrait { margin: 0; max-width: 425px; position: relative; }
+.portrait-image-wrap { background: var(--ink); overflow: hidden; position: relative; }
+.portrait-image-wrap img { display: block; filter: saturate(.93) contrast(1.07); height: auto; width: 100%; }
+.portrait-age { bottom: -25px; color: var(--paper-light); font-family: Georgia, serif; font-size: clamp(115px, 16vw, 210px); font-weight: 400; left: -8px; letter-spacing: -.12em; line-height: .7; position: absolute; text-shadow: 4px 4px 0 var(--ink); }
+.tolstoy-portrait figcaption { background: var(--ink); color: white; display: grid; gap: 2px; padding: 13px 16px 15px; }
+.tolstoy-portrait figcaption strong { font-size: 16px; }
+.tolstoy-portrait figcaption span { color: #cfc7bc; font-size: 13px; }
+.tolstoy-portrait figcaption small { color: #aaa39a; font-size: 10px; line-height: 1.25; margin-top: 8px; }
+.tolstoy-portrait.compact { max-width: 300px; }
 
 .route-section, .how-section, .passport-block, .reading-section, .pulse, .source-list {
   margin: 0 auto;
   max-width: var(--max);
-  padding: 90px 28px;
+  padding: 70px 28px;
 }
 .route-section { background: var(--ink); color: var(--paper-light); max-width: none; padding-left: max(28px, calc((100vw - var(--max)) / 2 + 28px)); padding-right: max(28px, calc((100vw - var(--max)) / 2 + 28px)); }
 .route-grid { display: grid; gap: 50px; grid-template-columns: 1fr 1fr; }
@@ -83,13 +91,42 @@ button.button { cursor: pointer; }
 .route-facts span, .route-facts strong { border-bottom: 1px solid #4b4742; padding: 15px 0; }
 .route-facts span { color: #aaa39a; }
 .button-row { align-items: center; display: flex; flex-wrap: wrap; gap: 25px; }
-.how-grid { display: grid; gap: 40px; grid-template-columns: repeat(3, 1fr); list-style: none; padding: 0; }
+.how-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); list-style: none; padding: 0; }
 .how-grid li { border-top: 4px solid var(--ink); padding-top: 20px; }
 .how-grid li span { color: var(--red); font-weight: 900; }
 .how-grid h3 { font-family: Georgia, serif; font-size: 36px; font-weight: 400; margin: 18px 0 10px; }
 
-.author-hero, .work-hero { min-height: 75vh; }
+.author-hero, .work-hero { min-height: 0; }
 .author-hero h1, .work-hero h1, .simple-hero h1 { font-size: clamp(90px, 15vw, 190px); }
+.author-profile-hero { align-items: center; display: grid; gap: 52px; grid-template-columns: minmax(0, 1fr) minmax(300px, .58fr); }
+.author-profile-hero .tolstoy-portrait { justify-self: end; width: 100%; }
+.quick-facts { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); margin: 30px 0 5px; max-width: 720px; }
+.quick-facts span { background: var(--ink); color: #cfc7bc; font-size: 12px; line-height: 1.25; padding: 15px 13px; }
+.quick-facts b { color: white; display: block; font-size: 14px; margin-top: 5px; }
+.passport-intro { margin: 0 auto; max-width: var(--max); padding: 50px 28px 26px; }
+.passport-intro h2 { font-size: clamp(44px, 6vw, 78px); max-width: 700px; }
+.passport-intro > p:last-child { color: var(--muted); font-size: 18px; max-width: 610px; }
+.passport-card-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); margin: 0 auto; max-width: var(--max); padding: 0 28px 72px; }
+.passport-card { background: var(--paper-light); display: flex; flex-direction: column; min-height: 285px; padding: 24px; }
+.passport-card:nth-child(3n + 2) { background: var(--ink); color: white; }
+.passport-card:nth-child(3n + 2) .card-index, .passport-card:nth-child(3n + 2) details { color: #b8afa4; }
+.passport-card:nth-child(3n) { background: var(--red); color: white; }
+.passport-card:nth-child(3n) .card-index, .passport-card:nth-child(3n) details { color: var(--ink); }
+.passport-card#peer-age { grid-column: span 2; }
+.passport-card h2 { font-size: clamp(30px, 3vw, 45px); margin: 10px 0 16px; }
+.passport-card > p:not(.card-index) { font-size: 16px; line-height: 1.42; }
+.card-index { color: var(--red); font-size: 12px; font-weight: 900; letter-spacing: .1em; margin-bottom: auto; }
+.passport-card details { font-size: 13px; margin-top: auto; }
+.passport-card summary { cursor: pointer; font-weight: 800; margin-top: 10px; }
+.passport-card details p { margin: 12px 0 0; }
+.passport-card blockquote { border-left-color: currentColor; font-size: 22px; margin: auto 0 0; padding-left: 14px; }
+.passport-card .age-mirror { margin-top: 22px; max-width: none; }
+.passport-card .age-mirror > label:first-child { font-size: 24px; }
+.passport-card .split-card { margin: 12px 0; }
+.passport-card .split-card div { min-height: 125px; padding: 16px; }
+.passport-card .split-card strong { font-size: 18px; }
+.passport-card textarea { font-size: 14px; }
+.passport-card .button { font-size: 14px; padding: 11px 16px; }
 .passport { border-top: 1px solid var(--line); }
 .passport-block { border-bottom: 1px solid var(--line); display: grid; grid-template-columns: minmax(180px, .45fr) minmax(0, 1fr); column-gap: 60px; }
 .passport-block .eyebrow { grid-column: 1; }
@@ -110,11 +147,17 @@ textarea { background: var(--paper-light); border: 1px solid var(--line); border
 .next-step .eyebrow { color: var(--ink); }
 .next-step h2 { max-width: 900px; }
 
-.work-hero { background: linear-gradient(120deg, var(--paper) 65%, #ded5c5 65%); }
+.work-hero { background: radial-gradient(circle at 80% 28%, var(--red) 0 16%, transparent 16.2%), var(--ink); color: var(--paper-light); max-width: none; padding-left: max(28px, calc((100vw - var(--max)) / 2 + 28px)); padding-right: max(28px, calc((100vw - var(--max)) / 2 + 28px)); }
+.work-hero .hero-kicker, .work-hero .micro { color: #cfc7bc; }
+.work-hero h1 em { color: var(--red); }
+.work-hero .route-line { border-color: #4b4742; max-width: 660px; }
+.work-hero .button-ghost { border-color: white; color: white; }
 .route-line { border-top: 1px solid var(--line); font-weight: 800; margin-top: 50px; padding-top: 20px; }
 .reading-section { border-bottom: 1px solid var(--line); }
-.character-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin: 40px 0 70px; }
-.character-grid article { background: var(--paper-light); min-height: 220px; padding: 28px; }
+.character-grid { display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); margin: 30px 0 46px; }
+.character-grid article { background: var(--paper-light); min-height: 140px; padding: 20px; }
+.character-grid h3 { font-size: 19px; margin-bottom: 8px; }
+.character-grid p { font-size: 15px; line-height: 1.35; }
 .section-label { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
 .terms { display: grid; gap: 0; grid-template-columns: 1fr 1fr; margin-bottom: 50px; }
 .terms div { border-top: 1px solid var(--line); padding: 22px 18px 22px 0; }
@@ -152,18 +195,35 @@ footer p { color: #aaa39a; margin: 0; }
   body { font-size: 16px; }
   .site-header { align-items: flex-start; padding: 18px; }
   .site-header nav { gap: 8px; flex-direction: column; text-align: right; }
-  .hero, .author-hero, .work-hero, .simple-hero { padding: 65px 18px 80px; }
+  .hero, .author-hero, .work-hero, .simple-hero { padding: 38px 18px 50px; }
   .hero { grid-template-columns: 1fr; }
-  .hero-mark { display: none; }
+  .hero .tolstoy-portrait { max-width: none; }
+  .hero .portrait-image-wrap { max-height: 470px; }
+  .hero .portrait-image-wrap img { margin-top: -40px; }
   h1 { font-size: 55px; }
   .author-hero h1, .work-hero h1, .simple-hero h1 { font-size: 78px; }
-  .route-section, .how-section, .passport-block, .reading-section, .pulse, .source-list { padding: 65px 18px; }
-  .route-grid, .how-grid, .passport-block, .character-grid, .terms { grid-template-columns: 1fr; }
+  .route-section, .how-section, .passport-block, .reading-section, .pulse, .source-list { padding: 46px 18px; }
+  .route-grid, .how-grid, .passport-block, .character-grid, .terms, .author-profile-hero { grid-template-columns: 1fr; }
+  .hero-actions { align-items: stretch; flex-direction: column; }
+  .hero-actions .button { margin-top: 0; text-align: center; }
+  .author-profile-hero { gap: 26px; }
+  .author-profile-hero .tolstoy-portrait { justify-self: stretch; order: -1; }
+  .author-profile-hero .portrait-image-wrap { max-height: 420px; }
+  .author-profile-hero .portrait-image-wrap img { margin-top: -45px; }
+  .quick-facts { margin-top: 22px; }
+  .quick-facts span { padding: 12px 10px; }
+  .quick-facts b { font-size: 12px; }
+  .passport-intro { padding: 40px 18px 20px; }
+  .passport-card-grid { display: flex; gap: 12px; overflow-x: auto; padding: 0 18px 52px; scroll-snap-type: x mandatory; }
+  .passport-card { flex: 0 0 min(85vw, 360px); min-height: 330px; scroll-snap-align: start; }
+  .passport-card#peer-age { grid-column: auto; }
+  .passport-card .age-mirror { min-width: 0; }
+  .passport-card#peer-age { flex-basis: min(92vw, 420px); }
   .passport-block .eyebrow, .passport-block h2, .passport-block > p:not(.eyebrow), .passport-block blockquote, .passport-block .age-mirror, .passport-block .button { grid-column: 1; }
   .passport-block h2 { font-size: 44px; }
   .split-card { grid-template-columns: 1fr; }
   .route-facts { margin-top: 20px; }
-  .work-hero { background: var(--paper); }
+  .work-hero { background: radial-gradient(circle at 92% 14%, var(--red) 0 10%, transparent 10.2%), var(--ink); padding-left: 18px; padding-right: 18px; }
   footer { align-items: flex-start; flex-direction: column; gap: 40px; padding: 45px 18px; }
 }
 
