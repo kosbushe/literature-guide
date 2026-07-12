@@ -351,6 +351,20 @@ textarea { background: var(--paper-light); border: 1px solid var(--line); border
 .after-ball-author-facts { border-top: 1px solid rgba(255,255,255,.28); display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 30px; padding-top: 16px; }
 .after-ball-author-facts span { color: #dfd2b3; font-size: 13px; font-weight: 800; }
 .after-ball-words { padding-bottom: 82px; }
+.after-ball-words .terms { margin-bottom: 30px; }
+.microglossary { border-top: 1px solid var(--line); display: grid; gap: clamp(28px, 6vw, 76px); grid-template-columns: minmax(220px, .55fr) minmax(0, 1.45fr); padding-top: 34px; }
+.microglossary-intro h3 { font-family: Georgia, serif; font-size: clamp(28px, 3.3vw, 46px); font-weight: 400; letter-spacing: -.04em; line-height: 1.03; margin: 0 0 12px; }
+.microglossary-intro p:last-child { color: var(--muted); font-size: 16px; line-height: 1.38; margin: 0; max-width: 280px; }
+.microglossary-grid { border-top: 1px solid var(--line); }
+.microglossary-grid details { border-bottom: 1px solid var(--line); }
+.microglossary-grid summary { align-items: center; cursor: pointer; display: flex; font-family: Georgia, serif; font-size: 23px; justify-content: space-between; list-style: none; padding: 15px 0; }
+.microglossary-grid summary::-webkit-details-marker { display: none; }
+.microglossary-grid summary span { color: var(--red); font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 400; }
+.microglossary-grid details[open] summary span { transform: rotate(45deg); }
+.microglossary-grid details > div { max-width: 720px; padding: 0 34px 20px 0; }
+.microglossary-grid details p { font-size: 16px; line-height: 1.42; margin: 0 0 10px; }
+.microglossary-grid details p + p { color: var(--muted); }
+.microglossary-grid .term-reference { display: inline-block; margin: 2px 0 0; }
 .after-ball-read { background: var(--ink); color: white; padding: 100px max(28px, calc((100vw - var(--max)) / 2 + 28px)); }
 .after-ball-read .eyebrow { color: var(--red); }
 .after-ball-read h2 { color: white; max-width: 850px; }
@@ -508,6 +522,9 @@ footer p { color: #aaa39a; margin: 0; }
   .after-ball-author-age { max-width: 420px; }
   .after-ball-author p { font-size: 17px; }
   .after-ball-read { padding-bottom: 65px; padding-top: 65px; }
+  .microglossary { gap: 25px; grid-template-columns: 1fr; }
+  .microglossary-grid summary { font-size: 21px; }
+  .microglossary-grid details > div { padding-right: 0; }
   .after-ball-read-actions { align-items: flex-start; flex-direction: column; gap: 14px; }
   .share-actions { align-items: stretch; flex-direction: column; }
   .share-actions .button, .share-actions a, .share-copy { text-align: center; width: 100%; }

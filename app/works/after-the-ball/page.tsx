@@ -80,13 +80,33 @@ export default function AfterTheBallPage() {
       </section>
 
       <section className="reading-section after-ball-words">
-        <p className="eyebrow">СЛОВА, КОТОРЫЕ НЕ ДАДУТ ТЕКСТУ СТАТЬ ЧУЖИМ</p>
-        <h2>Не заучивай.<br />Держи рядом.</h2>
+        <p className="eyebrow">СЛОВА, БЕЗ КОТОРЫХ ТЕКСТ СТАНЕТ ЧУЖИМ</p>
+        <h2>Не учи.<br />Открывай, если слово<br />мешает увидеть сцену.</h2>
+        <p className="section-lead">Четыре слова помогут войти в рассказ. Остальные не надо запоминать заранее: они откроются, когда понадобятся.</p>
         <dl className="terms">
           {workRu.before.terms.map((item) => (
             <div key={item.term}><dt>{item.term}<TermReference term={item.term} /></dt><dd>{item.description}</dd></div>
           ))}
         </dl>
+        <div className="microglossary" aria-labelledby="glossary-title">
+          <div className="microglossary-intro">
+            <p className="eyebrow">ПО ХОДУ ЧТЕНИЯ</p>
+            <h3 id="glossary-title">Встретил незнакомое? Нажми.</h3>
+            <p>Здесь не надо ничего учить. Это короткие подсказки к миру рассказа.</p>
+          </div>
+          <div className="microglossary-grid">
+            {workRu.before.glossary.map((item) => (
+              <details key={item.term}>
+                <summary>{item.term}<span>+</span></summary>
+                <div>
+                  <p>{item.description}</p>
+                  <p><b>Зачем это здесь:</b> {item.why}</p>
+                  <TermReference term={item.term} />
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="after-ball-read" id="read">
