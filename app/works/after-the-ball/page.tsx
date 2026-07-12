@@ -1,6 +1,5 @@
 import { EventLink } from "@/components/EventLink";
 import { ContextCodeCard } from "@/components/ContextCodeCard";
-import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
 import { OpenBookBackdrop } from "@/components/OpenBookBackdrop";
 import { TermReference } from "@/components/TermReference";
@@ -51,8 +50,6 @@ export default function AfterTheBallPage() {
         <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть полный текст</EventLink>
         <p className="micro">Текст откроется в новой вкладке. Мы не будем мешать.</p>
       </section>
-
-      <ReadingPulse />
 
       <section className="reading-section during">
         <p className="eyebrow">Во время чтения · по желанию</p>

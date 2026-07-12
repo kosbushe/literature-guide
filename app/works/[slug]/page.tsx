@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContextCodeCard } from "@/components/ContextCodeCard";
 import { EventLink } from "@/components/EventLink";
-import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
 import { OpenBookBackdrop } from "@/components/OpenBookBackdrop";
 import { TermReference } from "@/components/TermReference";
@@ -40,11 +39,15 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const characters = route.characters ?? [{ name: route.author, description: route.authorIntro }, { name: "Главный конфликт", description: route.contextTitle }, { name: "Твой вопрос", description: route.question }];
   const stops = route.signals.slice(0, 3).map((signal, index) => ({ stop: ["На старте", "В середине", "После финала"][index], question: signal.title, hint: signal.text }));
   const visualIndex = guideRoutes.findIndex((item) => item.slug === route.slug);
+  const frogTale = route.slug === "russian-folk-tale";
+  const openingExcerpt = frogTale ? "В некотором царстве, в некотором государстве жил-был царь, и было у него три сына." : undefined;
+  const contextImage = frogTale ? "/literature-guide/context/frog-kingdom.jpg" : profile?.portrait.src;
+  const contextImageAlt = frogTale ? "Сказочное царство, лес, пруд и дорога" : profile?.portrait.alt;
 
   return (
     <main>
       <section className="work-hero work-hero-with-book">
-        <OpenBookBackdrop author={route.author} title={route.work} intro={route.hook} year={route.year} />
+        <OpenBookBackdrop author={route.author} title={route.work} intro={route.hook} year={route.year} excerpt={openingExcerpt} />
         <div className="work-hero-copy">
           <p className="eyebrow">{route.category} · {route.authorShort}</p>
           <p className="hero-kicker">Сначала вопрос. Потом – текст.</p>
@@ -63,8 +66,8 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       <section className="reading-section before" id="before">
         <p className="eyebrow">Перед чтением</p>
         <h2>Сначала пойми,<br />куда ты попал.</h2>
-        <TimeContext year={route.year} era={route.era} work={route.work} visualIndex={visualIndex} />
-        <ContextCodeCard imageAlt={profile?.portrait.alt} imageSrc={profile?.portrait.src} card={{ code: "КОД ТЕКСТА · 01", title: route.contextTitle, thesis: route.contextText, points: route.signals }} />
+        <TimeContext year={route.year} era={route.era} work={route.work} visualIndex={visualIndex} visualSrc={frogTale ? "/literature-guide/context/frog-kingdom.jpg" : undefined} />
+        <ContextCodeCard imageAlt={contextImageAlt} imageSrc={contextImage} card={{ code: "КОД ТЕКСТА · 01", title: route.contextTitle, thesis: route.contextText, points: route.signals }} />
         <h3 className="section-label">Люди в этой истории</h3>
         <div className="character-grid">
           {characters.map((character) => <article key={character.name}><h3>{character.name}</h3><p>{character.description}</p></article>)}
@@ -75,8 +78,6 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         <EventLink event="full_text_opened" external href={route.fullTextUrl}>Открыть полный текст</EventLink>
         <p className="micro">Текст откроется в новой вкладке. Мы не будем мешать.</p>
       </section>
-
-      <ReadingPulse />
 
       <section className="reading-section during">
         <p className="eyebrow">Во время чтения · по желанию</p>

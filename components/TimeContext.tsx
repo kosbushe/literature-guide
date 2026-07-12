@@ -3,6 +3,7 @@ type TimeContextProps = {
   era: string;
   work: string;
   visualIndex: number;
+  visualSrc?: string;
 };
 
 type TimeBridge = {
@@ -80,7 +81,7 @@ function introFor(work: string, visualIndex: number) {
   return intros[visualIndex % intros.length];
 }
 
-export function TimeContext({ year, era, work, visualIndex }: TimeContextProps) {
+export function TimeContext({ year, era, work, visualIndex, visualSrc }: TimeContextProps) {
   const bridge = bridgeFor(year, era);
   const panel = visualIndex % 9;
   const sheet = Math.floor(visualIndex / 9) + 1;
@@ -88,8 +89,9 @@ export function TimeContext({ year, era, work, visualIndex }: TimeContextProps) 
   const y = Math.floor(panel / 3) * 50;
 
   const style = {
-    "--scene-image": `url(/literature-guide/context/time-scenes-${String(sheet).padStart(2, "0")}.jpg)`,
-    "--scene-position": `${x}% ${y}%`,
+    "--scene-image": `url(${visualSrc ?? `/literature-guide/context/time-scenes-${String(sheet).padStart(2, "0")}.jpg`})`,
+    "--scene-position": visualSrc ? "center" : `${x}% ${y}%`,
+    "--scene-size": visualSrc ? "cover" : "300% 300%",
   } as CSSProperties;
 
   return (
