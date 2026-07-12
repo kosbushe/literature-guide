@@ -12,15 +12,18 @@ type Props = {
   visualIndex: number;
 };
 
-const folkVisuals: Record<string, { src: string; alt: string }> = {
+const workVisuals: Record<string, { src: string; alt: string }> = {
   "russian-folk-tale": { src: "/literature-guide/context/frog-kingdom.jpg", alt: "Сказочное царство, лес, пруд и дорога" },
   "sivka-burka": { src: "/literature-guide/context/sivka-burka.webp", alt: "Иванушка и Сивка-бурка на рассвете" },
-  "ivan-tsarevich-and-grey-wolf": { src: "/literature-guide/context/ivan-tsarevich-wolf.webp", alt: "Иван-царевич и Серый Волк на лесной дороге" }
+  "ivan-tsarevich-and-grey-wolf": { src: "/literature-guide/context/ivan-tsarevich-wolf.webp", alt: "Иван-царевич и Серый Волк на лесной дороге" },
+  "krylov-wolf-and-lamb": { src: "/literature-guide/context/krylov-wolf-lamb.webp", alt: "Волк и ягнёнок у ручья в утреннем пейзаже" },
+  "pushkin-dead-princess": { src: "/literature-guide/context/pushkin-dead-princess.webp", alt: "Заснеженная лесная поляна и дом семи богатырей" },
+  "lermontov-borodino": { src: "/literature-guide/context/lermontov-borodino.webp", alt: "Бородинское поле, редут и пушка на рассвете" }
 };
 
 export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
-  const folkVisual = folkVisuals[route.slug];
-  const visual = folkVisual ?? (profile?.portrait.src ? { src: profile.portrait.src, alt: profile.portrait.alt } : undefined);
+  const workVisual = workVisuals[route.slug];
+  const visual = workVisual ?? (profile?.portrait.src ? { src: profile.portrait.src, alt: profile.portrait.alt } : undefined);
   const textUrl = route.primaryTextUrl ?? route.fullTextUrl;
   const terms = route.terms.length >= 4 ? route.terms : [...route.terms, { term: "Деталь", text: "Небольшая подробность, которая помогает заметить главный выбор героя." }];
   const glossary = route.glossary ?? [];
