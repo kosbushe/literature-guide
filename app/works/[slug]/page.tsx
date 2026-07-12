@@ -39,15 +39,20 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const characters = route.characters ?? [{ name: route.author, description: route.authorIntro }, { name: "Главный конфликт", description: route.contextTitle }, { name: "Твой вопрос", description: route.question }];
   const stops = route.signals.slice(0, 3).map((signal, index) => ({ stop: ["На старте", "В середине", "После финала"][index], question: signal.title, hint: signal.text }));
   const visualIndex = guideRoutes.findIndex((item) => item.slug === route.slug);
-  const frogTale = route.slug === "russian-folk-tale";
-  const openingExcerpt = frogTale ? "В некотором царстве, в некотором государстве жил-был царь, и было у него три сына." : undefined;
-  const contextImage = frogTale ? "/literature-guide/context/frog-kingdom.jpg" : profile?.portrait.src;
-  const contextImageAlt = frogTale ? "Сказочное царство, лес, пруд и дорога" : profile?.portrait.alt;
+  const folkTaleAssets: Record<string, { excerpt: string; src: string; alt: string }> = {
+    "russian-folk-tale": { excerpt: "В некотором царстве, в некотором государстве жил-был царь, и было у него три сына.", src: "/literature-guide/context/frog-kingdom.jpg", alt: "Сказочное царство, лес, пруд и дорога" },
+    "sivka-burka": { excerpt: "Было у старика трое сыновей: двое умных, а третий Иванушка-дурачок.", src: "/literature-guide/context/sivka-burka.webp", alt: "Деревня на рассвете, Иванушка и волшебный конь Сивка-бурка" },
+    "ivan-tsarevich-and-grey-wolf": { excerpt: "Жил-был царь Берендей, у него было три сына, младшего звали Иваном.", src: "/literature-guide/context/ivan-tsarevich-wolf.webp", alt: "Иван-царевич и Серый Волк на лесной дороге" }
+  };
+  const folkTale = folkTaleAssets[route.slug];
+  const textUrl = route.primaryTextUrl ?? route.fullTextUrl;
+  const contextImage = folkTale?.src ?? profile?.portrait.src;
+  const contextImageAlt = folkTale?.alt ?? profile?.portrait.alt;
 
   return (
     <main>
       <section className="work-hero work-hero-with-book">
-        <OpenBookBackdrop author={route.author} title={route.work} intro={route.hook} year={route.year} excerpt={openingExcerpt} />
+        <OpenBookBackdrop author={route.author} title={route.work} intro={route.hook} year={route.year} excerpt={folkTale?.excerpt} />
         <div className="work-hero-copy">
           <p className="eyebrow">{route.category} · {route.authorShort}</p>
           <p className="hero-kicker">Сначала вопрос. Потом – текст.</p>
@@ -55,7 +60,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           <p className="lead">{route.hook}</p>
           <p className="route-line">{route.year} · {route.era}</p>
           <div className="hero-actions">
-            <EventLink event="full_text_opened" external href={route.fullTextUrl}>Открыть текст</EventLink>
+            <EventLink event="full_text_opened" external href={textUrl}>Открыть текст</EventLink>
             <Link className="button button-ghost" href={`/authors/${route.authorSlug}`}>Про автора</Link>
             <a className="button button-ghost" href="#before">Дай мне контекст</a>
           </div>
@@ -66,7 +71,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       <section className="reading-section before" id="before">
         <p className="eyebrow">Перед чтением</p>
         <h2>Сначала пойми,<br />куда ты попал.</h2>
-        <TimeContext year={route.year} era={route.era} work={route.work} visualIndex={visualIndex} visualSrc={frogTale ? "/literature-guide/context/frog-kingdom.jpg" : undefined} />
+        <TimeContext year={route.year} era={route.era} work={route.work} visualIndex={visualIndex} visualSrc={folkTale?.src} />
         <ContextCodeCard imageAlt={contextImageAlt} imageSrc={contextImage} card={{ code: "КОД ТЕКСТА · 01", title: route.contextTitle, thesis: route.contextText, points: route.signals }} />
         <h3 className="section-label">Люди в этой истории</h3>
         <div className="character-grid">
@@ -75,8 +80,8 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         <h3 className="section-label">Четыре слова, без которых текст будет чужим</h3>
         <dl className="terms">{terms.slice(0, 4).map((item) => <div key={item.term}><dt>{item.term}<TermReference term={item.term} /></dt><dd>{item.text}</dd></div>)}</dl>
         <blockquote>{route.question}</blockquote>
-        <EventLink event="full_text_opened" external href={route.fullTextUrl}>Открыть полный текст</EventLink>
-        <p className="micro">Текст откроется в новой вкладке. Мы не будем мешать.</p>
+        <EventLink event="full_text_opened" external href={textUrl}>Открыть полный текст</EventLink>
+        {route.backupTextUrl ? <p className="micro">Не открылось? <a href={route.backupTextUrl} target="_blank" rel="noreferrer">Запасная ссылка</a>.</p> : <p className="micro">Текст откроется в новой вкладке. Мы не будем мешать.</p>}
       </section>
 
       <section className="reading-section during">

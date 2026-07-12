@@ -20,7 +20,8 @@ export const curriculum: GradeCurriculum[] = [
     prompt: "Сказки, приключения, первая большая проза.",
     works: [
       { author: "Народная традиция", title: "Царевна-лягушка", ready: true, href: "/works/russian-folk-tale" },
-      { author: "Народная традиция", title: "Илья Муромец и Соловей-разбойник", ready: true, href: "/works/bylina-ilya-muromets" },
+      { author: "Народная традиция", title: "Сивка-бурка", ready: true, href: "/works/sivka-burka" },
+      { author: "Народная традиция", title: "Иван-царевич и Серый Волк", ready: true, href: "/works/ivan-tsarevich-and-grey-wolf" },
       { author: "И. А. Крылов", title: "Волк и Ягнёнок", ready: true, href: "/works/krylov-wolf-and-lamb" },
       { author: "А. С. Пушкин", title: "Сказка о мёртвой царевне", ready: true, href: "/works/pushkin-dead-princess" },
       { author: "М. Ю. Лермонтов", title: "Бородино", ready: true, href: "/works/lermontov-borodino" },
@@ -29,13 +30,14 @@ export const curriculum: GradeCurriculum[] = [
       { author: "Л. Н. Толстой", title: "Кавказский пленник", ready: true, href: "/works/tolstoy-caucasian-prisoner" },
       { author: "А. П. Чехов", title: "Каштанка", ready: true, href: "/works/chekhov-kashtanka" }
     ],
-    authors: ["Русская народная сказка", "Русская былина", "И. А. Крылов", "А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "Л. Н. Толстой", "А. П. Чехов"]
+    authors: ["Русская народная сказка", "И. А. Крылов", "А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "Л. Н. Толстой", "А. П. Чехов"]
   },
   {
     grade: 6,
     phase: "Герой, выбор, справедливость",
     prompt: "Начинаются характеры, конфликты и настоящая цена поступка.",
     works: [
+      { author: "Народная традиция", title: "Илья Муромец и Соловей-разбойник", ready: true, href: "/works/bylina-ilya-muromets" },
       { author: "А. С. Пушкин", title: "Дубровский", ready: true, href: "/works/pushkin-dubrovsky" },
       { author: "М. Ю. Лермонтов", title: "«Тучи», «Листок», «Утёс»", ready: true, href: "/works/lermontov-lyrics" },
       { author: "Н. В. Гоголь", title: "«Вечера на хуторе близ Диканьки»", ready: true, href: "/works/gogol-evenings" },
@@ -49,7 +51,7 @@ export const curriculum: GradeCurriculum[] = [
       { author: "В. Г. Распутин", title: "Уроки французского", ready: true, href: "/works/rasputin-french-lessons" },
       { author: "Ф. А. Искандер", title: "Тринадцатый подвиг Геракла", ready: true, href: "/works/iskander-thirteenth-labor" }
     ],
-    authors: ["А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "Н. А. Некрасов", "Н. С. Лесков", "Л. Н. Толстой", "А. П. Чехов", "А. С. Грин", "В. П. Астафьев", "В. Г. Распутин", "Ф. А. Искандер"]
+    authors: ["Русская былина", "А. С. Пушкин", "М. Ю. Лермонтов", "Н. В. Гоголь", "И. С. Тургенев", "Н. А. Некрасов", "Н. С. Лесков", "Л. Н. Толстой", "А. П. Чехов", "А. С. Грин", "В. П. Астафьев", "В. Г. Распутин", "Ф. А. Искандер"]
   },
   {
     grade: 7,

@@ -31,9 +31,9 @@ for (const block of authorRu.passport) {
 }
 
 const fifthGradeBlock = curriculum.match(/grade: 5,[\s\S]*?authors:/)?.[0] ?? "";
-assert.equal((fifthGradeBlock.match(/ready: true/g) ?? []).length, 9, "Fifth grade must have nine ready first-season routes");
+assert.equal((fifthGradeBlock.match(/ready: true/g) ?? []).length, 10, "Fifth grade must have ten ready routes");
 const sixthGradeBlock = curriculum.match(/grade: 6,[\s\S]*?authors:/)?.[0] ?? "";
-assert.equal((sixthGradeBlock.match(/ready: true/g) ?? []).length, 12, "Sixth grade must have twelve ready routes");
+assert.equal((sixthGradeBlock.match(/ready: true/g) ?? []).length, 13, "Sixth grade must have thirteen ready routes");
 for (const grade of [7, 8, 9, 10, 11]) {
   const block = curriculum.match(new RegExp(`grade: ${grade},[\\s\\S]*?authors:`))?.[0] ?? "";
   assert.equal((block.match(/ready: true/g) ?? []).length, 6, `${grade} grade must have six ready routes`);
