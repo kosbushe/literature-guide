@@ -10,7 +10,7 @@ export function OpenBookBackdrop({ author, title, intro, year, excerpt }: OpenBo
   return (
     <div className="open-book-backdrop" aria-hidden="true">
       <div className="open-book-page open-book-page--left">
-        <span>ЛИТЕРАТУРА.ГАЙД</span>
+        <span>ЛИТЕРАТУРА.ГИД ШКОЛЬНИКА</span>
         <p className="open-book-author">{author}</p>
         <p className="open-book-title">{title}</p>
         <small>{year} · вход в текст</small>

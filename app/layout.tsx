@@ -3,10 +3,10 @@ import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: { default: "Литература гайд", template: "%s · Литература гайд" },
+  title: { default: "Литература.Гид школьника", template: "%s · Литература.Гид школьника" },
   description: "Навигатор по школьной русской литературе: класс, произведение, автор, эпоха и вход в текст.",
   openGraph: {
-    title: "Литература гайд",
+    title: "Литература.Гид школьника",
     description: "Навигатор по школьной русской литературе: класс, произведение, автор, эпоха и вход в текст.",
     type: "website"
   }
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <footer>
           <div className="footer-main">
-            <span>ЛИТЕРАТУРА.ГАЙД</span>
+            <span>ЛИТЕРАТУРА.ГИД ШКОЛЬНИКА</span>
             <p>Сначала контекст. Потом текст. Вывод – твой.</p>
           </div>
           <div className="footer-legal">

@@ -28,8 +28,8 @@ export function BookCover({ author, title, grade }: BookCoverProps) {
   const coverTitle = cleanCoverTitle(title);
 
   return (
-    <aside className="book-cover" aria-label={`Обложка серии «Литература.Гайд»: ${author}, ${coverTitle}`}>
-      <p className="book-cover__series">ЛИТЕРАТУРА.ГАЙД</p>
+    <aside className="book-cover" aria-label={`Обложка серии «Литература.Гид школьника»: ${author}, ${coverTitle}`}>
+      <p className="book-cover__series">ЛИТЕРАТУРА.ГИД ШКОЛЬНИКА</p>
       <div className="book-cover__title-block">
         <p className="book-cover__author">{author}</p>
         <p className="book-cover__title" style={{ "--cover-title-size": `${titleSize(coverTitle)}px` } as CSSProperties}>{coverTitle}</p>

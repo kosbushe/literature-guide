@@ -45,7 +45,7 @@ const sameAgePrompts = {
   15: "Какое своё увлечение или мысль ты готов защищать, даже если другие не понимают?"
 };
 
-const reconstruction = (name: string, src: string) => ({ alt: `Авторская художественная реконструкция: ${name} в 15 лет`, caption: `${name} · 15 лет`, credit: "Авторская художественная реконструкция для «Литература.Гайд» · не документальный портрет", label: name, src });
+const reconstruction = (name: string, src: string) => ({ alt: `Авторская художественная реконструкция: ${name} в 15 лет`, caption: `${name} · 15 лет`, credit: "Авторская художественная реконструкция для «Литература.Гид школьника» · не документальный портрет", label: name, src });
 
 export const sixthGradeAuthorProfiles: Record<string, AuthorProfile> = {
   "nikolai-nekrasov": {
