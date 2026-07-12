@@ -1,78 +1,111 @@
+import Link from "next/link";
+import { BeforeReadingChoice } from "@/components/BeforeReadingChoice";
 import { EventLink } from "@/components/EventLink";
-import { ContextCodeCard } from "@/components/ContextCodeCard";
 import { ShareQuestion } from "@/components/ShareQuestion";
-import { OpenBookBackdrop } from "@/components/OpenBookBackdrop";
 import { TermReference } from "@/components/TermReference";
 import { TimeContext } from "@/components/TimeContext";
 import { workCore, workRu } from "@/lib/content";
-import Link from "next/link";
 
 export const metadata = { title: "После бала – маршрут чтения" };
 
+const backupTextUrl = workCore.backupTextUrl;
+
 export default function AfterTheBallPage() {
   return (
-    <main>
-      <section className="work-hero work-hero-with-book">
-        <OpenBookBackdrop author="Лев Толстой" title="После бала" intro={workRu.teaser} year="1840-е" />
-        <div className="work-hero-copy">
-          <p className="eyebrow">Лев Толстой · маршрут чтения</p>
-          <p className="hero-kicker">Сначала вопрос. Потом – текст.</p>
+    <main className="after-ball-page">
+      <section className="after-ball-hero">
+        <div className="after-ball-hero-copy">
+          <p className="eyebrow">8 КЛАСС · РАССКАЗ · ЛЕВ ТОЛСТОЙ</p>
+          <p className="after-ball-kicker">Сначала увидь конфликт. Потом открывай текст.</p>
           <h1>После<br /><em>бала</em></h1>
-          <p className="lead">{workRu.teaser}</p>
-          <p className="route-line">{workRu.routeLine}</p>
+          <p className="after-ball-lead">Ты влюбился. Отец девушки кажется идеальным взрослым. Через несколько часов ты видишь его так, что больше не можешь смотреть на него прежними глазами.</p>
+          <p className="after-ball-question">Поверить глазам или объяснить себе: «так принято»?</p>
           <div className="hero-actions">
+            <a className="button" href="#choice">С чего начать? <span>↓</span></a>
             <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть рассказ</EventLink>
-            <Link className="button button-ghost" href="/authors/leo-tolstoy">Про Толстого</Link>
-            <a className="button button-ghost" href="#before">Дай мне контекст</a>
+            <a className="button button-ghost" href="#tolstoy">Толстой в 15</a>
           </div>
-          <p className="micro">Откроется в новой вкладке · никаких регистраций</p>
+          <p className="micro">Короткий рассказ · два мира · одна ночь и одно утро</p>
+        </div>
+        <figure className="after-ball-hero-art">
+          <img src="/literature-guide/context/after-ball-ball.webp" alt="Варенька танцует мазурку с отцом-полковником на балу" />
+          <figcaption><span>КАДР 01</span> Вечером форма означает уважение, музыку и красоту.</figcaption>
+        </figure>
+      </section>
+
+      <section className="after-ball-choice-section" id="choice">
+        <p className="eyebrow">ПЕРЕД ЧТЕНИЕМ · 10 СЕКУНД</p>
+        <BeforeReadingChoice />
+      </section>
+
+      <section className="after-ball-reveal" aria-label="Два мира рассказа">
+        <article>
+          <img src="/literature-guide/context/after-ball-ball.webp" alt="Бал в России 1840-х годов" loading="lazy" />
+          <div><span>ВЕЧЕР</span><h2>Тот же полковник.<br />Белые перчатки. Мазурка.</h2><p>Герой уверен: перед ним идеальный человек и идеальная семья.</p></div>
+        </article>
+        <article>
+          <img src="/literature-guide/context/after-ball-dawn.webp" alt="Утро после бала: строй солдат и полковник на холодном плацу" loading="lazy" />
+          <div><span>УТРО</span><h2>Та же форма.<br />Тот же человек.</h2><p>Теперь герой видит то, чего вечером не замечал.</p></div>
+        </article>
+      </section>
+
+      <section className="reading-section after-ball-context" id="before">
+        <p className="eyebrow">СНАЧАЛА ПОЙМИ, КУДА ТЫ ПОПАЛ</p>
+        <h2>Россия 1840-х:<br />бал, чин и телесное наказание.</h2>
+        <p className="section-lead">Это не рассказ «про старину». Это история о мире, где красота, статус и насилие могут принадлежать одному порядку.</p>
+        <TimeContext year="1840-е" era="Россия: бал, военный чин и телесное наказание" work="После бала" visualIndex={51} visualSrc="/literature-guide/context/after-ball-dawn.webp" />
+      </section>
+
+      <section className="after-ball-code">
+        <div>
+          <p className="eyebrow">КОД ТЕКСТА · 01</p>
+          <h2>Красота и жестокость могут быть частью одного мира.</h2>
+        </div>
+        <div className="after-ball-code-grid">
+          <article><span>БАЛ</span><p>Не просто вечеринка, а публичный ритуал: здесь все видят, кого пригласили, с кем танцуют и кому оказывают внимание.</p></article>
+          <article><span>ПОЛКОВНИК</span><p>Не только отец Вареньки. Его чин означает власть и обязанность подчиняться военному порядку.</p></article>
+          <article><span>ШПИЦРУТЕНЫ</span><p>Наказание, в котором множество солдат вынуждены участвовать в боли одного человека.</p></article>
         </div>
       </section>
 
-      <section className="reading-section before" id="before">
-        <p className="eyebrow">Перед чтением</p>
-        <h2>Сначала пойми,<br />куда ты попал.</h2>
-        <TimeContext year="1840-е" era="Россия, бал, чин и правила сословий" work="После бала" visualIndex={51} />
-        <ContextCodeCard card={workRu.before.contextCard} />
-        <h3 className="section-label">Люди в этой сцене</h3>
-        <div className="character-grid">
-          {workRu.before.characters.map((character) => (
-            <article key={character.name}><h3>{character.name}</h3><p>{character.description}</p></article>
-          ))}
+      <section className="after-ball-author" id="tolstoy">
+        <div className="after-ball-author-age"><span>15</span><small>ЛЕТ<br />ТОЛСТОМУ</small></div>
+        <div>
+          <p className="eyebrow">КТО НАПИСАЛ ЭТОТ ТЕКСТ</p>
+          <h2>Он ещё не великий писатель.</h2>
+          <p>Тебе в 8 классе обычно 13–14. Толстому в 15 — почти столько же. Он живёт в Казани, готовится к университету, сомневается в себе и пытается понять, каким человеком хочет стать.</p>
+          <p>До «После бала» ещё почти шестьдесят лет. Но вопрос уже его: отвечает ли человек только за свои поступки — или ещё и за порядок, которому подчиняется?</p>
+          <div className="after-ball-author-facts"><span>1844 · Казань</span><span>Готовится к университету</span><span>До славы — ещё далеко</span></div>
         </div>
-        <h3 className="section-label">Четыре слова, без которых текст будет чужим</h3>
+      </section>
+
+      <section className="reading-section after-ball-words">
+        <p className="eyebrow">СЛОВА, КОТОРЫЕ НЕ ДАДУТ ТЕКСТУ СТАТЬ ЧУЖИМ</p>
+        <h2>Не заучивай.<br />Держи рядом.</h2>
         <dl className="terms">
           {workRu.before.terms.map((item) => (
             <div key={item.term}><dt>{item.term}<TermReference term={item.term} /></dt><dd>{item.description}</dd></div>
           ))}
         </dl>
-        <blockquote>{workRu.before.question}</blockquote>
-        <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть полный текст</EventLink>
-        <p className="micro">Текст откроется в новой вкладке. Мы не будем мешать.</p>
       </section>
 
-      <section className="reading-section during">
-        <p className="eyebrow">Во время чтения · по желанию</p>
-        <h2>Не тест. Три остановки, чтобы увидеть конструкцию.</h2>
-        <div className="stops">
-          {workRu.during.map((item, index) => (
-            <details key={item.stop}>
-              <summary><span>0{index + 1}</span>{item.stop}</summary>
-              <h3>{item.question}</h3>
-              <p>{item.hint}</p>
-            </details>
-          ))}
+      <section className="after-ball-read" id="read">
+        <p className="eyebrow">ТЕПЕРЬ — ТЕКСТ</p>
+        <h2>Открой рассказ<br />и найди точку,<br />после которой герой<br />не может остаться прежним.</h2>
+        <p>Ты уже знаешь, почему важны бал, мазурка, полковник и утро. Дальше Толстой должен работать сам.</p>
+        <div className="after-ball-read-actions">
+          <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть полный текст</EventLink>
+          <a href={backupTextUrl} target="_blank" rel="noreferrer">Не открылось? Запасная ссылка ↗</a>
         </div>
       </section>
 
-      <section className="reading-section after">
-        <p className="eyebrow">После чтения</p>
-        <h2>{workRu.after.title}</h2>
-        <ol className="question-list">
-          {workRu.after.questions.map((question) => <li key={question}>{question}</li>)}
-        </ol>
+      <section className="reading-section after-ball-after">
+        <p className="eyebrow">КОГДА ДОЧИТАЕШЬ</p>
+        <h2>Не контрольная.<br />Один честный вывод.</h2>
+        <blockquote>Полковник изменился — или изменилось то, что Иван Васильевич смог в нём увидеть?</blockquote>
         <p className="note">Одной точной детали из текста достаточно. Пересказывать весь сюжет человечество уже научилось.</p>
         <ShareQuestion text={workRu.after.shareText} />
+        <p className="after-ball-back"><Link href="/">← Вернуться к маршрутам по классам</Link></p>
       </section>
     </main>
   );

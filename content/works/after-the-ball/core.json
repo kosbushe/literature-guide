@@ -8,5 +8,7 @@
   "status": "fact_checked_draft",
   "targetAge": { "min": 13, "max": 15, "grade": 8 },
   "fullTextUrl": "https://ru.wikisource.org/wiki/После_бала_(Толстой)",
+  "backupTextUrl": "https://www.rvb.ru/tolstoy/01text/vol_14/01text/0299.htm",
+  "textLinksCheckedAt": "2026-07-12",
   "sourceIds": ["tolstoy-ru-volume-34", "tolstoy-museum-after-ball", "wikisource-after-ball"]
 }
