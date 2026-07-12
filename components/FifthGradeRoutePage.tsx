@@ -89,9 +89,9 @@ export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
           <AuthorPortrait ageMark={`${profile.age}`} alt={profile.portrait.alt} caption={profile.portrait.caption} credit={profile.portrait.credit} label={profile.portrait.label} src={profile.portrait.src} showAge={false} />
         ) : null}
         <div>
-          <p className="eyebrow">{isTradition ? "КТО СОБРАЛ ЭТУ ИСТОРИЮ" : "КТО НАПИСАЛ ЭТОТ ТЕКСТ"}</p>
+          <p className="eyebrow">{isTradition ? "КТО СОБРАЛ ЭТУ ИСТОРИЮ" : "ОН ТОЖЕ БЫЛ ТВОИМ РОВЕСНИКОМ"}</p>
           <h2>{isTradition ? "Сказка без одного автора." : `${route.author} в ${profile?.age ?? 15} лет.`}</h2>
-          {!isTradition && <p className="fifth-work-age-note">Тебе в 5 классе обычно 10–11. Здесь автору 15: он не твой двойник, но ещё точно не «великий писатель из учебника».</p>}
+          {!isTradition && <p className="fifth-work-age-note">Тебе в 5 классе обычно 10–11. На этой иллюстрации автору 15: это не один возраст, но тот же путь — школа, сомнения, первые попытки понять себя. До учебника и славы ещё далеко.</p>}
           <p>{profile?.ageLead ?? route.authorIntro}</p>
           <p>{profile?.kicker ?? route.authorIntro}</p>
           <div className="fifth-work-author-facts">
