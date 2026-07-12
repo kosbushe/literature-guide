@@ -48,7 +48,7 @@ export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
           <div className="hero-actions">
             <a className="button" href="#choice">С чего начать? <span>↓</span></a>
             <EventLink event="full_text_opened" external href={textUrl}>Открыть текст</EventLink>
-            <a className="button button-ghost" href="#author">{isTradition ? "Про традицию" : "Автор в твоём возрасте"}</a>
+            <a className="button button-ghost" href="#author">{isTradition ? "Про традицию" : "Автор: каким он был подростком"}</a>
           </div>
           <p className="micro">5 класс · читаем без регистрации · текст откроется в новой вкладке</p>
         </div>
@@ -82,6 +82,7 @@ export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
         <div>
           <p className="eyebrow">{isTradition ? "КТО СОБРАЛ ЭТУ ИСТОРИЮ" : "КТО НАПИСАЛ ЭТОТ ТЕКСТ"}</p>
           <h2>{isTradition ? "Сказка без одного автора." : `${route.author} в ${profile?.age ?? 15} лет.`}</h2>
+          {!isTradition && <p className="fifth-work-age-note">Тебе в 5 классе обычно 10–11. Здесь автору 15: он не твой двойник, но ещё точно не «великий писатель из учебника».</p>}
           <p>{profile?.ageLead ?? route.authorIntro}</p>
           <p>{profile?.kicker ?? route.authorIntro}</p>
           <div className="fifth-work-author-facts">
