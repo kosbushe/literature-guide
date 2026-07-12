@@ -227,6 +227,7 @@ export const fifthGradeRoutes: GuideRoute[] = [
     question: "Почему ответы Ягнёнка логичны, но всё равно не могут его спасти?",
     fullTextUrl: "https://ru.wikisource.org/wiki/Волк_и_Ягнёнок_(Крылов)",
     primaryTextUrl: "https://ru.wikisource.org/wiki/Волк_и_Ягнёнок_(Крылов)",
+    backupTextUrl: "https://rustih.com/ivan-krylov-volk-i-yagnyonok-basnya/",
     textLinksCheckedAt: "2026-07-12"
   },
   {
@@ -305,6 +306,7 @@ export const fifthGradeRoutes: GuideRoute[] = [
     question: "Почему ветеран гордится не собой лично, а тем, какими были «мы»?",
     fullTextUrl: "https://ru.wikisource.org/wiki/Бородино_(Лермонтов)",
     primaryTextUrl: "https://ru.wikisource.org/wiki/Бородино_(Лермонтов)",
+    backupTextUrl: "https://rustih.com/mixail-lermontov-borodino/",
     textLinksCheckedAt: "2026-07-12"
   },
   {
