@@ -23,6 +23,7 @@ export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
   const visual = folkVisual ?? (profile?.portrait.src ? { src: profile.portrait.src, alt: profile.portrait.alt } : undefined);
   const textUrl = route.primaryTextUrl ?? route.fullTextUrl;
   const terms = route.terms.length >= 4 ? route.terms : [...route.terms, { term: "Деталь", text: "Небольшая подробность, которая помогает заметить главный выбор героя." }];
+  const glossary = route.glossary ?? [];
   const isTradition = route.authorSlug === "russian-folk-tale";
   const authorFacts = profile
     ? profile.quickFacts.map((fact) => `${fact.top} · ${fact.bottom}`)
@@ -89,6 +90,23 @@ export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
         <dl className="terms">
           {terms.slice(0, 4).map((item) => <div key={item.term}><dt>{item.term}<TermReference term={item.term} /></dt><dd>{item.text}</dd></div>)}
         </dl>
+        {glossary.length > 0 && <div className="microglossary" aria-labelledby="glossary-title">
+          <div className="microglossary-intro">
+            <p className="eyebrow">ПО ХОДУ ЧТЕНИЯ</p>
+            <h3 id="glossary-title">Встретил незнакомое? Нажми.</h3>
+            <p>Здесь не надо ничего учить. Это короткие подсказки к миру произведения.</p>
+          </div>
+          <div className="microglossary-grid">
+            {glossary.map((item) => <details key={item.term}>
+              <summary>{item.term}<span>+</span></summary>
+              <div>
+                <p>{item.description}</p>
+                <p><b>Зачем это здесь:</b> {item.why}</p>
+                <TermReference term={item.term} />
+              </div>
+            </details>)}
+          </div>
+        </div>}
       </section>
 
       <section className="fifth-work-read" id="read">
