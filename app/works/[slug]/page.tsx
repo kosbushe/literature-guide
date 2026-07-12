@@ -6,6 +6,7 @@ import { ShareQuestion } from "@/components/ShareQuestion";
 import { OpenBookBackdrop } from "@/components/OpenBookBackdrop";
 import { TermReference } from "@/components/TermReference";
 import { TimeContext } from "@/components/TimeContext";
+import { FifthGradeRoutePage } from "@/components/FifthGradeRoutePage";
 import { fifthGradeAuthorProfiles, fifthGradeBySlug, fifthGradeRoutes } from "@/lib/fifth-grade";
 import { sixthGradeAuthorProfiles, sixthGradeBySlug, sixthGradeRoutes } from "@/lib/sixth-grade";
 import { seventhGradeRoutes } from "@/lib/seventh-grade";
@@ -34,6 +35,9 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const route = guideBySlug[slug];
   if (!route) notFound();
+  if (fifthGradeBySlug[slug] && route.category.startsWith("5 класс")) {
+    return <FifthGradeRoutePage route={route} profile={profiles[route.authorSlug]} visualIndex={fifthGradeRoutes.findIndex((item) => item.slug === route.slug)} />;
+  }
   const profile = profiles[route.authorSlug];
   const terms = route.terms.length >= 4 ? route.terms : [...route.terms, { term: "Деталь", text: "Небольшая подробность, которая помогает увидеть главный выбор героя." }];
   const characters = route.characters ?? [{ name: route.author, description: route.authorIntro }, { name: "Главный конфликт", description: route.contextTitle }, { name: "Твой вопрос", description: route.question }];

@@ -56,7 +56,10 @@ export const fifthGradeRoutes: GuideRoute[] = [
       { term: "Испытание", text: "Проверка, после которой герой уже не может остаться прежним." }
     ],
     question: "В какой момент Иван-царевич перестаёт просто хотеть «как удобно» и начинает отвечать за свой выбор?",
-    fullTextUrl: "https://ru.wikisource.org/w/index.php?search=Царевна-лягушка",
+    fullTextUrl: "https://ru.wikisource.org/wiki/Царевна-лягушка",
+    primaryTextUrl: "https://ru.wikisource.org/wiki/Царевна-лягушка",
+    backupTextUrl: "https://skazki.rustih.ru/carevna-lyagushka/",
+    textLinksCheckedAt: "2026-07-12",
     moreToRead: "Сравни два варианта сказки: что меняется, когда рассказчик другой?"
   },
   {
@@ -201,7 +204,9 @@ export const fifthGradeRoutes: GuideRoute[] = [
       { term: "Аллегория", text: "Когда через один образ говорят о чём-то другом." }
     ],
     question: "Почему ответы Ягнёнка логичны, но всё равно не могут его спасти?",
-    fullTextUrl: "https://ru.wikisource.org/w/index.php?search=Волк+и+Ягнёнок+Крылов"
+    fullTextUrl: "https://ru.wikisource.org/wiki/Волк_и_Ягнёнок_(Крылов)",
+    primaryTextUrl: "https://ru.wikisource.org/wiki/Волк_и_Ягнёнок_(Крылов)",
+    textLinksCheckedAt: "2026-07-12"
   },
   {
     slug: "pushkin-dead-princess",
@@ -233,7 +238,9 @@ export const fifthGradeRoutes: GuideRoute[] = [
       { term: "Образ", text: "Деталь или герой, через которые текст передаёт мысль и чувство." }
     ],
     question: "Почему Пушкин не делает царицу просто «злой», а показывает, как она сама попадает в ловушку зависти?",
-    fullTextUrl: "https://ru.wikisource.org/w/index.php?search=Сказка+о+мёртвой+царевне+и+о+семи+богатырях",
+    fullTextUrl: "https://ru.wikisource.org/wiki/Сказка_о_мёртвой_царевне_и_о_семи_богатырях_(Пушкин)",
+    primaryTextUrl: "https://ru.wikisource.org/wiki/Сказка_о_мёртвой_царевне_и_о_семи_богатырях_(Пушкин)",
+    textLinksCheckedAt: "2026-07-12",
     moreToRead: "После – пролог к «Руслану и Людмиле»: там тот же сказочный мир, но совсем другой темп."
   },
   {
@@ -265,7 +272,9 @@ export const fifthGradeRoutes: GuideRoute[] = [
       { term: "Отечественная война 1812 года", text: "Война России с армией Наполеона; Бородино – одно из её главных сражений." }
     ],
     question: "Почему ветеран гордится не собой лично, а тем, какими были «мы»?",
-    fullTextUrl: "https://ru.wikisource.org/w/index.php?search=Бородино+Лермонтов"
+    fullTextUrl: "https://ru.wikisource.org/wiki/Бородино_(Лермонтов)",
+    primaryTextUrl: "https://ru.wikisource.org/wiki/Бородино_(Лермонтов)",
+    textLinksCheckedAt: "2026-07-12"
   },
   {
     slug: "gogol-night-before-christmas",
@@ -296,7 +305,9 @@ export const fifthGradeRoutes: GuideRoute[] = [
       { term: "Колядки", text: "Песни и обрядовые поздравления, связанные с рождественским временем." }
     ],
     question: "Почему Вакула побеждает не потому, что он сильнее всех, а потому, что не позволяет страху управлять собой?",
-    fullTextUrl: "https://ru.wikisource.org/w/index.php?search=Ночь+перед+Рождеством+Гоголь"
+    fullTextUrl: "https://ru.wikisource.org/wiki/Ночь_перед_Рождеством_(Гоголь)",
+    primaryTextUrl: "https://ru.wikisource.org/wiki/Ночь_перед_Рождеством_(Гоголь)",
+    textLinksCheckedAt: "2026-07-12"
   },
   {
     slug: "turgenev-mumu",
@@ -327,7 +338,9 @@ export const fifthGradeRoutes: GuideRoute[] = [
       { term: "Немой", text: "Человек, который не может говорить; это не характеристика его ума или чувств." }
     ],
     question: "В какой момент Герасим впервые делает не то, что от него ждут? И почему это важно?",
-    fullTextUrl: "https://ru.wikisource.org/w/index.php?search=Муму+Тургенев"
+    fullTextUrl: "https://ru.wikisource.org/wiki/Муму_(Тургенев)",
+    primaryTextUrl: "https://ru.wikisource.org/wiki/Муму_(Тургенев)",
+    textLinksCheckedAt: "2026-07-12"
   },
   {
     slug: "tolstoy-caucasian-prisoner",
@@ -358,7 +371,9 @@ export const fifthGradeRoutes: GuideRoute[] = [
       { term: "Рассказ", text: "Небольшое прозаическое произведение с одним главным конфликтом." }
     ],
     question: "Почему Жилина спасает не только смелость, но и умение замечать другого человека?",
-    fullTextUrl: "https://ru.wikisource.org/w/index.php?search=Кавказский+пленник+Толстой",
+    fullTextUrl: "https://ru.wikisource.org/wiki/Кавказский_пленник_(Толстой)",
+    primaryTextUrl: "https://ru.wikisource.org/wiki/Кавказский_пленник_(Толстой)",
+    textLinksCheckedAt: "2026-07-12",
     moreToRead: "Потом можно перейти к «После бала» и увидеть Толстого уже в 8 классе – с другим вопросом о власти и человеке."
   },
   {
@@ -390,7 +405,9 @@ export const fifthGradeRoutes: GuideRoute[] = [
       { term: "Рассказчик", text: "Голос, который ведёт нас через историю." }
     ],
     question: "Почему Каштанка в финале выбирает не самый удобный и красивый вариант жизни?",
-    fullTextUrl: "https://ru.wikisource.org/w/index.php?search=Каштанка+Чехов"
+    fullTextUrl: "https://ru.wikisource.org/wiki/Каштанка_(Чехов)",
+    primaryTextUrl: "https://ru.wikisource.org/wiki/Каштанка_(Чехов)",
+    textLinksCheckedAt: "2026-07-12"
   }
 ];
 

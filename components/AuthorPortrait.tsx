@@ -5,9 +5,10 @@ type AuthorPortraitProps = {
   credit: string;
   label: string;
   src?: string;
+  showAge?: boolean;
 };
 
-export function AuthorPortrait({ ageMark, alt, caption, credit, label, src }: AuthorPortraitProps) {
+export function AuthorPortrait({ ageMark, alt, caption, credit, label, src, showAge = true }: AuthorPortraitProps) {
   return (
     <figure className="tolstoy-portrait">
       <div className="portrait-image-wrap">
@@ -19,7 +20,7 @@ export function AuthorPortrait({ ageMark, alt, caption, credit, label, src }: Au
             <strong>{label}</strong>
           </div>
         )}
-        <span className="portrait-age">{ageMark}</span>
+        {showAge && <span className="portrait-age">{ageMark}</span>}
       </div>
       <figcaption>
         <strong>{caption}</strong>
