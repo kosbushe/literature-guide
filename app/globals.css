@@ -33,8 +33,9 @@ button, textarea, input { font: inherit; }
   padding: 18px 28px;
 }
 .wordmark { font-size: 14px; font-weight: 900; letter-spacing: .08em; text-decoration: none; }
-.site-header nav { display: flex; gap: 24px; }
-.site-header nav a { color: var(--muted); font-size: 14px; text-decoration: none; }
+.site-header nav { display: flex; gap: 13px; }
+.site-header nav a { color: var(--muted); font-size: 14px; font-weight: 900; text-decoration: none; }
+.site-header nav a:not(:last-child)::after { color: var(--line); content: "/"; font-weight: 400; margin-left: 13px; }
 .site-header nav a:hover { color: var(--ink); }
 
 main { overflow: hidden; }
@@ -294,7 +295,7 @@ textarea { background: var(--paper-light); border: 1px solid var(--line); border
 
 /* Эталон единой страницы произведения: «После бала». */
 .after-ball-page { background: var(--paper); }
-.after-ball-hero { background: var(--ink); color: var(--paper-light); display: grid; grid-template-columns: minmax(0, .9fr) minmax(470px, 1.1fr); min-height: min(760px, calc(100svh - 58px)); overflow: hidden; padding-left: max(28px, calc((100vw - var(--max)) / 2 + 28px)); padding-right: max(28px, calc((100vw - var(--max)) / 2 + 28px)); }
+.after-ball-hero { background: var(--ink); color: var(--paper-light); isolation: isolate; min-height: calc(100svh - 58px); overflow: hidden; padding-left: max(28px, calc((100vw - var(--max)) / 2 + 28px)); padding-right: max(28px, calc((100vw - var(--max)) / 2 + 28px)); position: relative; }
 .after-ball-hero-copy { align-self: center; max-width: 650px; padding: 68px 0 72px; position: relative; z-index: 1; }
 .after-ball-hero .eyebrow { margin-bottom: 17px; }
 .after-ball-kicker { color: #d5cec4; font-size: 18px; font-weight: 800; margin-bottom: 28px; }
@@ -304,8 +305,8 @@ textarea { background: var(--paper-light); border: 1px solid var(--line); border
 .after-ball-question { color: #dfd2b3; font-family: Georgia, serif; font-size: 24px; line-height: 1.2; margin-bottom: 24px; }
 .after-ball-hero .button-ghost { border-color: rgba(255,255,255,.7); color: white; }
 .after-ball-hero .micro { color: #aaa39a; }
-.after-ball-hero-art { align-self: stretch; margin: 0; min-height: 650px; overflow: hidden; position: relative; }
-.after-ball-hero-art::after { background: linear-gradient(90deg, var(--ink) 0%, rgba(22,20,18,.4) 26%, transparent 57%), linear-gradient(0deg, rgba(22,20,18,.74), transparent 38%); content: ""; inset: 0; pointer-events: none; position: absolute; }
+.after-ball-hero-art { inset: 0; margin: 0; overflow: hidden; position: absolute; z-index: -1; }
+.after-ball-hero-art::after { background: linear-gradient(90deg, rgba(22,20,18,.96) 0%, rgba(22,20,18,.82) 33%, rgba(22,20,18,.18) 64%, rgba(22,20,18,.08)), linear-gradient(0deg, rgba(22,20,18,.58), transparent 44%); content: ""; inset: 0; pointer-events: none; position: absolute; }
 .after-ball-hero-art img { display: block; height: 100%; object-fit: cover; width: 100%; }
 .after-ball-hero-art figcaption { bottom: 28px; color: white; font-size: 14px; line-height: 1.3; max-width: 280px; position: absolute; right: 28px; text-align: right; z-index: 1; }
 .after-ball-hero-art figcaption span { color: #e3d6b7; display: block; font-size: 10px; font-weight: 900; letter-spacing: .12em; margin-bottom: 6px; }
@@ -410,7 +411,9 @@ footer p { color: #aaa39a; margin: 0; }
 @media (max-width: 760px) {
   body { font-size: 16px; }
   .site-header { align-items: center; padding: 14px 18px; }
-  .site-header nav { gap: 14px; text-align: right; }
+  .site-header nav { gap: 7px; text-align: right; }
+  .site-header nav a { font-size: 13px; }
+  .site-header nav a:not(:last-child)::after { margin-left: 7px; }
   .hero, .author-hero, .work-hero, .simple-hero { padding: 38px 18px 50px; }
   .hero { grid-template-columns: 1fr; }
   .home-manifesto { padding: 22px; }
@@ -480,13 +483,13 @@ footer p { color: #aaa39a; margin: 0; }
   .season-signal-grid h3, .season-fact-grid h3 { margin-top: 14px; }
   .season-words { padding-left: 18px; padding-right: 18px; }
   .season-question { margin-top: 28px; }
-  .after-ball-hero { display: flex; flex-direction: column; min-height: 0; padding: 0; }
+  .after-ball-hero { display: block; min-height: calc(100svh - 52px); padding: 0; }
   .after-ball-hero-copy { padding: 50px 18px 42px; }
   .after-ball-hero h1 { font-size: clamp(78px, 24vw, 122px); margin-bottom: 27px; }
   .after-ball-lead { font-size: 22px; }
   .after-ball-question { font-size: 21px; }
-  .after-ball-hero-art { min-height: 430px; order: 2; }
-  .after-ball-hero-art::after { background: linear-gradient(0deg, rgba(22,20,18,.75), transparent 54%); }
+  .after-ball-hero-art { min-height: 0; }
+  .after-ball-hero-art::after { background: linear-gradient(0deg, rgba(22,20,18,.72), rgba(22,20,18,.15) 47%, rgba(22,20,18,.78)); }
   .after-ball-hero-art figcaption { bottom: 20px; right: 18px; }
   .after-ball-choice-section, .after-ball-code, .after-ball-author, .after-ball-read { padding-left: 18px; padding-right: 18px; }
   .after-ball-choice-section { padding-bottom: 52px; padding-top: 52px; }

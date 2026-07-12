@@ -1,11 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { curriculum } from "@/lib/curriculum";
 
 export function GradeNavigator() {
   const [grade, setGrade] = useState(8);
+
+  useEffect(() => {
+    const requested = Number(new URLSearchParams(window.location.search).get("class"));
+    if (curriculum.some((item) => item.grade === requested)) setGrade(requested);
+  }, []);
+
   const current = curriculum.find((item) => item.grade === grade) ?? curriculum[3];
   const works = [...current.works].sort((a, b) => Number(Boolean(b.ready)) - Number(Boolean(a.ready)));
 
