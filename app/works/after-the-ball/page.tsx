@@ -4,6 +4,7 @@ import { EventLink } from "@/components/EventLink";
 import { ShareQuestion } from "@/components/ShareQuestion";
 import { TermReference } from "@/components/TermReference";
 import { TimeContext } from "@/components/TimeContext";
+import { TolstoyPortrait } from "@/components/TolstoyPortrait";
 import { workCore, workRu } from "@/lib/content";
 
 export const metadata = { title: "После бала – маршрут чтения" };
@@ -69,7 +70,7 @@ export default function AfterTheBallPage() {
       </section>
 
       <section className="after-ball-author" id="tolstoy">
-        <div className="after-ball-author-age"><span>15</span><small>ЛЕТ<br />ТОЛСТОМУ</small></div>
+        <TolstoyPortrait compact />
         <div>
           <p className="eyebrow">КТО НАПИСАЛ ЭТОТ ТЕКСТ</p>
           <h2>Лев Толстой<br />в 15 лет.</h2>
@@ -110,13 +111,19 @@ export default function AfterTheBallPage() {
       </section>
 
       <section className="after-ball-read" id="read">
-        <p className="eyebrow">ТЕПЕРЬ — ТЕКСТ</p>
-        <h2>Открой рассказ<br />и найди точку,<br />после которой герой<br />не может остаться прежним.</h2>
-        <p>Ты уже знаешь, почему важны бал, мазурка, полковник и утро. Дальше Толстой должен работать сам.</p>
-        <div className="after-ball-read-actions">
-          <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть полный текст</EventLink>
-          <a href={backupTextUrl} target="_blank" rel="noreferrer">Не открылось? Запасная ссылка ↗</a>
+        <div className="after-ball-read-copy">
+          <p className="eyebrow">ТЕПЕРЬ — ТЕКСТ</p>
+          <h2>Открой рассказ<br />и найди точку,<br />после которой герой<br />не может остаться прежним.</h2>
+          <p>Ты уже знаешь, почему важны бал, мазурка, полковник и утро. Дальше Толстой должен работать сам.</p>
+          <div className="after-ball-read-actions">
+            <EventLink event="full_text_opened" external href={workCore.fullTextUrl}>Открыть полный текст</EventLink>
+            <a href={backupTextUrl} target="_blank" rel="noreferrer">Не открылось? Запасная ссылка ↗</a>
+          </div>
         </div>
+        <figure className="after-ball-read-art">
+          <img src="/literature-guide/context/after-ball-read-dawn.webp" alt="Молодой человек идёт один по утренней улице России 1840-х годов" loading="lazy" />
+          <figcaption><span>КАДР 03</span> После истории ты уже видишь утро иначе.</figcaption>
+        </figure>
       </section>
 
       <section className="reading-section after-ball-after">
