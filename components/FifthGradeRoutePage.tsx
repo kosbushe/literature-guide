@@ -12,22 +12,31 @@ type Props = {
   visualIndex: number;
 };
 
-const workVisuals: Record<string, { src: string; alt: string }> = {
-  "russian-folk-tale": { src: "/literature-guide/context/frog-kingdom.jpg", alt: "Сказочное царство, лес, пруд и дорога" },
-  "sivka-burka": { src: "/literature-guide/context/sivka-burka.webp", alt: "Иванушка и Сивка-бурка на рассвете" },
-  "ivan-tsarevich-and-grey-wolf": { src: "/literature-guide/context/ivan-tsarevich-wolf.webp", alt: "Иван-царевич и Серый Волк на лесной дороге" },
-  "krylov-wolf-and-lamb": { src: "/literature-guide/context/krylov-wolf-lamb.webp", alt: "Волк и ягнёнок у ручья в утреннем пейзаже" },
-  "pushkin-dead-princess": { src: "/literature-guide/context/pushkin-dead-princess.webp", alt: "Заснеженная лесная поляна и дом семи богатырей" },
-  "lermontov-borodino": { src: "/literature-guide/context/lermontov-borodino.webp", alt: "Бородинское поле, редут и пушка на рассвете" },
-  "gogol-night-before-christmas": { src: "/literature-guide/context/gogol-christmas-night.webp", alt: "Зимняя деревня в рождественскую ночь" },
-  "turgenev-mumu": { src: "/literature-guide/context/turgenev-mumu.webp", alt: "Московский двор у господского дома в 1840-е годы" },
-  "tolstoy-caucasian-prisoner": { src: "/literature-guide/context/tolstoy-caucasian-prisoner.webp", alt: "Горное селение и дорога в кавказской долине" },
-  "chekhov-kashtanka": { src: "/literature-guide/context/chekhov-kashtanka.webp", alt: "Городская улица с фонарями и Каштанка в конце XIX века" }
+type WorkVisuals = {
+  hero: { src: string; alt: string };
+  context?: { src: string; alt: string };
+  read?: { src: string; alt: string };
+};
+
+const workVisuals: Record<string, WorkVisuals> = {
+  "russian-folk-tale": { hero: { src: "/literature-guide/context/frog-kingdom.jpg", alt: "Сказочное царство, лес, пруд и дорога" }, context: { src: "/literature-guide/context/frog-context.webp", alt: "Сказочное царство у пруда" }, read: { src: "/literature-guide/context/frog-read.webp", alt: "Лесная дорога и лебедь на рассвете" } },
+  "sivka-burka": { hero: { src: "/literature-guide/context/sivka-burka.webp", alt: "Иванушка и Сивка-бурка на рассвете" }, context: { src: "/literature-guide/context/sivka-context.webp", alt: "Ярмарка и высокая башня в сказочном городе" }, read: { src: "/literature-guide/context/time-scenes-01.jpg", alt: "Кадр сказочного пути" } },
+  "ivan-tsarevich-and-grey-wolf": { hero: { src: "/literature-guide/context/ivan-tsarevich-wolf.webp", alt: "Иван-царевич и Серый Волк на лесной дороге" }, context: { src: "/literature-guide/context/time-scenes-02.jpg", alt: "Кадр сказочного мира" }, read: { src: "/literature-guide/context/time-scenes-03.jpg", alt: "Кадр пути героя" } },
+  "krylov-wolf-and-lamb": { hero: { src: "/literature-guide/context/krylov-wolf-lamb.webp", alt: "Волк и ягнёнок у ручья в утреннем пейзаже" }, context: { src: "/literature-guide/context/time-scenes-04.jpg", alt: "Кадр эпохи басни" }, read: { src: "/literature-guide/context/time-scenes-05.jpg", alt: "Кадр после спора" } },
+  "pushkin-dead-princess": { hero: { src: "/literature-guide/context/pushkin-dead-princess.webp", alt: "Заснеженная лесная поляна и дом семи богатырей" }, context: { src: "/literature-guide/context/time-scenes-06.jpg", alt: "Кадр сказочного времени" }, read: { src: "/literature-guide/context/time-scenes-01.jpg", alt: "Кадр пути царевны" } },
+  "lermontov-borodino": { hero: { src: "/literature-guide/context/lermontov-borodino.webp", alt: "Бородинское поле, редут и пушка на рассвете" }, context: { src: "/literature-guide/context/time-scenes-02.jpg", alt: "Кадр военной эпохи" }, read: { src: "/literature-guide/context/time-scenes-03.jpg", alt: "Кадр после сражения" } },
+  "gogol-night-before-christmas": { hero: { src: "/literature-guide/context/gogol-christmas-night.webp", alt: "Зимняя деревня в рождественскую ночь" }, context: { src: "/literature-guide/context/time-scenes-04.jpg", alt: "Кадр рождественской ночи" }, read: { src: "/literature-guide/context/time-scenes-05.jpg", alt: "Кадр сказочной дороги" } },
+  "turgenev-mumu": { hero: { src: "/literature-guide/context/turgenev-mumu.webp", alt: "Московский двор у господского дома в 1840-е годы" }, context: { src: "/literature-guide/context/time-scenes-06.jpg", alt: "Кадр Москвы XIX века" }, read: { src: "/literature-guide/context/time-scenes-01.jpg", alt: "Кадр после выбора" } },
+  "tolstoy-caucasian-prisoner": { hero: { src: "/literature-guide/context/tolstoy-caucasian-prisoner.webp", alt: "Горное селение и дорога в кавказской долине" }, context: { src: "/literature-guide/context/time-scenes-02.jpg", alt: "Кадр горной дороги" }, read: { src: "/literature-guide/context/time-scenes-03.jpg", alt: "Кадр перед побегом" } },
+  "chekhov-kashtanka": { hero: { src: "/literature-guide/context/chekhov-kashtanka.webp", alt: "Городская улица с фонарями и Каштанка в конце XIX века" }, context: { src: "/literature-guide/context/time-scenes-04.jpg", alt: "Кадр городского времени" }, read: { src: "/literature-guide/context/time-scenes-05.jpg", alt: "Кадр вечернего города" } }
 };
 
 export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
-  const workVisual = workVisuals[route.slug];
-  const visual = workVisual ?? (profile?.portrait.src ? { src: profile.portrait.src, alt: profile.portrait.alt } : undefined);
+  const visuals = workVisuals[route.slug];
+  const fallbackVisual = profile?.portrait.src ? { src: profile.portrait.src, alt: profile.portrait.alt } : undefined;
+  const heroVisual = visuals?.hero ?? fallbackVisual;
+  const contextVisual = visuals?.context ?? heroVisual;
+  const readVisual = visuals?.read ?? heroVisual;
   const textUrl = route.primaryTextUrl ?? route.fullTextUrl;
   const terms = route.terms.length >= 4 ? route.terms : [...route.terms, { term: "Деталь", text: "Небольшая подробность, которая помогает заметить главный выбор героя." }];
   const glossary = route.glossary ?? [];
@@ -39,7 +48,7 @@ export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
   return (
     <main className="fifth-work">
       <section className="fifth-work-hero">
-        {visual && <figure className="fifth-work-hero-art"><img src={visual.src} alt={visual.alt} /><figcaption><span>ВХОД В ТЕКСТ</span>{route.era}</figcaption></figure>}
+        {heroVisual && <figure className="fifth-work-hero-art"><img src={heroVisual.src} alt={heroVisual.alt} /><figcaption><span>ВХОД В ТЕКСТ</span>{route.era}</figcaption></figure>}
         <div className="fifth-work-hero-copy">
           <p className="eyebrow">{route.category} · {route.authorShort}</p>
           <p className="fifth-work-kicker">Сначала личный вопрос. Потом — текст.</p>
@@ -70,7 +79,7 @@ export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
         <p className="eyebrow">СНАЧАЛА ПОЙМИ, КУДА ТЫ ПОПАЛ</p>
         <h2>{route.contextTitle}</h2>
         <p className="section-lead">{route.contextText}</p>
-        <TimeContext year={route.year} era={route.era} work={route.work} visualIndex={visualIndex} visualSrc={visual?.src} />
+        <TimeContext year={route.year} era={route.era} work={route.work} visualIndex={visualIndex} visualSrc={contextVisual?.src} />
       </section>
 
       <section className="fifth-work-author" id="author">
@@ -118,7 +127,7 @@ export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
       </section>
 
       <section className="fifth-work-read" id="read">
-        {visual && <figure className="fifth-work-read-art"><img src={visual.src} alt="" /></figure>}
+        {readVisual && <figure className="fifth-work-read-art"><img src={readVisual.src} alt="" /></figure>}
         <div className="fifth-work-read-copy">
           <p className="eyebrow">ТЕПЕРЬ — ТЕКСТ</p>
           <h2>Открой произведение<br />и найди место,<br />после которого<br />твой взгляд меняется.</h2>
