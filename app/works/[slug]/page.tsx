@@ -4,7 +4,8 @@ import { ContextCodeCard } from "@/components/ContextCodeCard";
 import { EventLink } from "@/components/EventLink";
 import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
-import { BookCover } from "@/components/BookCover";
+import { OpenBookBackdrop } from "@/components/OpenBookBackdrop";
+import { TermReference } from "@/components/TermReference";
 import { TimeContext } from "@/components/TimeContext";
 import { fifthGradeAuthorProfiles, fifthGradeBySlug, fifthGradeRoutes } from "@/lib/fifth-grade";
 import { sixthGradeAuthorProfiles, sixthGradeBySlug, sixthGradeRoutes } from "@/lib/sixth-grade";
@@ -42,7 +43,8 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
 
   return (
     <main>
-      <section className="work-hero work-hero-with-cover">
+      <section className="work-hero work-hero-with-book">
+        <OpenBookBackdrop author={route.author} title={route.work} intro={route.hook} year={route.year} />
         <div className="work-hero-copy">
           <p className="eyebrow">{route.category} · {route.authorShort}</p>
           <p className="hero-kicker">Сначала вопрос. Потом – текст.</p>
@@ -56,7 +58,6 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           </div>
           <p className="micro">Откроется в новой вкладке · никаких регистраций</p>
         </div>
-        <BookCover author={route.author} title={route.work} grade={route.category.match(/\d+/)?.[0]} />
       </section>
 
       <section className="reading-section before" id="before">
@@ -69,7 +70,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           {characters.map((character) => <article key={character.name}><h3>{character.name}</h3><p>{character.description}</p></article>)}
         </div>
         <h3 className="section-label">Четыре слова, без которых текст будет чужим</h3>
-        <dl className="terms">{terms.slice(0, 4).map((item) => <div key={item.term}><dt>{item.term}</dt><dd>{item.text}</dd></div>)}</dl>
+        <dl className="terms">{terms.slice(0, 4).map((item) => <div key={item.term}><dt>{item.term}<TermReference term={item.term} /></dt><dd>{item.text}</dd></div>)}</dl>
         <blockquote>{route.question}</blockquote>
         <EventLink event="full_text_opened" external href={route.fullTextUrl}>Открыть полный текст</EventLink>
         <p className="micro">Текст откроется в новой вкладке. Мы не будем мешать.</p>

@@ -2,7 +2,8 @@ import { EventLink } from "@/components/EventLink";
 import { ContextCodeCard } from "@/components/ContextCodeCard";
 import { ReadingPulse } from "@/components/ReadingPulse";
 import { ShareQuestion } from "@/components/ShareQuestion";
-import { BookCover } from "@/components/BookCover";
+import { OpenBookBackdrop } from "@/components/OpenBookBackdrop";
+import { TermReference } from "@/components/TermReference";
 import { TimeContext } from "@/components/TimeContext";
 import { workCore, workRu } from "@/lib/content";
 import Link from "next/link";
@@ -12,7 +13,8 @@ export const metadata = { title: "После бала – маршрут чте�
 export default function AfterTheBallPage() {
   return (
     <main>
-      <section className="work-hero work-hero-with-cover">
+      <section className="work-hero work-hero-with-book">
+        <OpenBookBackdrop author="Лев Толстой" title="После бала" intro={workRu.teaser} year="1840-е" />
         <div className="work-hero-copy">
           <p className="eyebrow">Лев Толстой · маршрут чтения</p>
           <p className="hero-kicker">Сначала вопрос. Потом – текст.</p>
@@ -26,7 +28,6 @@ export default function AfterTheBallPage() {
           </div>
           <p className="micro">Откроется в новой вкладке · никаких регистраций</p>
         </div>
-        <BookCover author="Лев Толстой" title="После бала" grade="8" />
       </section>
 
       <section className="reading-section before" id="before">
@@ -43,7 +44,7 @@ export default function AfterTheBallPage() {
         <h3 className="section-label">Четыре слова, без которых текст будет чужим</h3>
         <dl className="terms">
           {workRu.before.terms.map((item) => (
-            <div key={item.term}><dt>{item.term}</dt><dd>{item.description}</dd></div>
+            <div key={item.term}><dt>{item.term}<TermReference term={item.term} /></dt><dd>{item.description}</dd></div>
           ))}
         </dl>
         <blockquote>{workRu.before.question}</blockquote>

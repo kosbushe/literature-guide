@@ -24,15 +24,23 @@ function bridgeFor(year: string, era: string): TimeBridge {
 
   if (/(xviii|пугач|петр|екатерин|17\d{2}|180[0-9])/.test(period)) {
     return {
-      today: { title: "Связь — за секунды", text: "Можно написать, позвонить или проверить новость сразу." },
+      today: { title: "Связь и знания — за секунды", text: "У тебя есть интернет, ИИ, карта мира и возможность быстро сверить любую версию событий." },
       then: { title: "Письмо и дорога", text: "Весть идёт с человеком, лошадью или почтой. Ошибку и опасность нельзя быстро исправить." },
       difference: { title: "Статус решает многое", text: "Сословие, семья и чин сильнее определяют судьбу, чем твой личный план." },
     };
   }
 
+  if (/(крепост|ревизск|помещик)/.test(period)) {
+    return {
+      today: { title: "У тебя — ИИ и право на своё имя", text: "В 2026 году ты можешь учиться, менять маршрут и искать ответы сам. Технологии расширяют выбор, а закон признаёт тебя отдельным человеком." },
+      then: { title: "Человек — строка в списке", text: "Твой ровесник мог родиться крепостным: его труд, переезд и судьба зависели от помещика. Бумага учитывала людей почти как имущество." },
+      difference: { title: "Абсурд становится возможным", text: "Когда человека можно посчитать как вещь, афера Чичикова выглядит не фантазией, а следствием самого порядка." },
+    };
+  }
+
   if (/(xix|18\d{2}|19[0-9]?|крепост|помещик|царск|николаев)/.test(period)) {
     return {
-      today: { title: "Мир помещается в телефоне", text: "Карта, связь, музыка и знания всегда рядом. Ты можешь быстро искать свой путь." },
+      today: { title: "Можно строить свою траекторию", text: "У тебя есть связь, навигация, цифровые инструменты и доступ к знаниям далеко за пределами родного города." },
       then: { title: "Мир начинается за воротами", text: "Ровесник зависит от семьи, денег, дороги и правил своего сословия. Письмо может идти неделями." },
       difference: { title: "Выбор дороже", text: "Уйти, учиться, любить не того человека или спорить со старшими — риск с реальными последствиями." },
     };
@@ -40,7 +48,7 @@ function bridgeFor(year: string, era: string): TimeBridge {
 
   if (/(революц|191\d|192\d|193\d|194\d|великая отечественная|война)/.test(period)) {
     return {
-      today: { title: "Ты видишь мир сразу", text: "Новости, лица близких и чужой опыт приходят на экран почти мгновенно." },
+      today: { title: "Мир связан сетями и энергией", text: "Новости, связь, транспорт и целые города держатся на технологиях, которые кажутся тебе обычными." },
       then: { title: "Ждут письма и сводки", text: "Ровесник слышит радио, читает газету, ждёт вестей. Большая история входит в каждый дом." },
       difference: { title: "Безопасность не дана", text: "Война и власть могут решать за семью, где жить, учиться и можно ли просто быть ребёнком." },
     };
@@ -48,14 +56,14 @@ function bridgeFor(year: string, era: string): TimeBridge {
 
   if (/(195\d|196\d|197\d|198\d|совет|перестройк)/.test(period)) {
     return {
-      today: { title: "У тебя много голосов", text: "Ты выбираешь, что смотреть, слушать и с кем говорить." },
+      today: { title: "Ты сам собираешь свою картину мира", text: "Можно слышать миллионы голосов, проверять факты и находить людей далеко за пределами своего города." },
       then: { title: "Телевизор и домашний телефон", text: "Информация приходит медленнее и через немногие источники. Личный мир заметно меньше." },
       difference: { title: "Личное — не совсем личное", text: "Школа, работа родителей и правила государства сильнее влияют на обычную жизнь." },
     };
   }
 
   return {
-    today: { title: "Связь всегда рядом", text: "Ты можешь быстро узнать контекст, найти маршрут и спросить другого человека." },
+    today: { title: "У тебя больше инструментов выбора", text: "Связь, ИИ, знания и инфраструктура работают в фоне — и дают больше способов влиять на свою жизнь." },
     then: { title: "Мир без мгновенного ответа", text: "Ровесник героя живёт в темпе своего города, семьи и времени — без постоянного экрана." },
     difference: { title: "Поступок нельзя отменить", text: "Новость, дорога, репутация и решение взрослых меняют жизнь медленнее, но заметнее." },
   };
@@ -79,17 +87,15 @@ export function TimeContext({ year, era, work, visualIndex }: TimeContextProps) 
   const x = (panel % 3) * 50;
   const y = Math.floor(panel / 3) * 50;
 
+  const style = {
+    "--scene-image": `url(/literature-guide/context/time-scenes-${String(sheet).padStart(2, "0")}.jpg)`,
+    "--scene-position": `${x}% ${y}%`,
+  } as CSSProperties;
+
   return (
-    <section className="epoch-context" aria-label={`Временной контекст: ${year}, ${era}`}>
-      <div className="epoch-media-row">
-        <div
-          className="epoch-scene"
-          role="img"
-          aria-label={`Иллюстрация: ${era}`}
-          style={{ backgroundImage: `url(/literature-guide/context/time-scenes-${String(sheet).padStart(2, "0")}.jpg)`, backgroundPosition: `${x}% ${y}%` }}
-        >
-          <span>МЕСТО И ВРЕМЯ</span>
-        </div>
+    <section className="epoch-context" style={style} aria-label={`Временной контекст: ${year}, ${era}`}>
+      <div className="epoch-content">
+        <span className="epoch-scene-label">МЕСТО И ВРЕМЯ</span>
         <div>
           <div className="epoch-title">
             <span>ВРЕМЯ ТЕКСТА · {year}</span>
@@ -97,12 +103,13 @@ export function TimeContext({ year, era, work, visualIndex }: TimeContextProps) 
           </div>
           <p className="epoch-intro">{introFor(work, visualIndex)}</p>
         </div>
-      </div>
-      <div className="epoch-grid">
-        <article><span>ТЫ СЕЙЧАС</span><h3>{bridge.today.title}</h3><p>{bridge.today.text}</p></article>
-        <article><span>ТВОЙ РОВЕСНИК ТОГДА</span><h3>{bridge.then.title}</h3><p>{bridge.then.text}</p></article>
-        <article><span>ЧТО ЭТО МЕНЯЕТ</span><h3>{bridge.difference.title}</h3><p>{bridge.difference.text}</p></article>
+        <div className="epoch-grid">
+          <article><span>ТЫ СЕЙЧАС</span><h3>{bridge.today.title}</h3><p>{bridge.today.text}</p></article>
+          <article><span>ТВОЙ РОВЕСНИК ТОГДА</span><h3>{bridge.then.title}</h3><p>{bridge.then.text}</p></article>
+          <article><span>ЧТО ЭТО МЕНЯЕТ</span><h3>{bridge.difference.title}</h3><p>{bridge.difference.text}</p></article>
+        </div>
       </div>
     </section>
   );
 }
+import type { CSSProperties } from "react";
