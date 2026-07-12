@@ -18,7 +18,11 @@ const workVisuals: Record<string, { src: string; alt: string }> = {
   "ivan-tsarevich-and-grey-wolf": { src: "/literature-guide/context/ivan-tsarevich-wolf.webp", alt: "Иван-царевич и Серый Волк на лесной дороге" },
   "krylov-wolf-and-lamb": { src: "/literature-guide/context/krylov-wolf-lamb.webp", alt: "Волк и ягнёнок у ручья в утреннем пейзаже" },
   "pushkin-dead-princess": { src: "/literature-guide/context/pushkin-dead-princess.webp", alt: "Заснеженная лесная поляна и дом семи богатырей" },
-  "lermontov-borodino": { src: "/literature-guide/context/lermontov-borodino.webp", alt: "Бородинское поле, редут и пушка на рассвете" }
+  "lermontov-borodino": { src: "/literature-guide/context/lermontov-borodino.webp", alt: "Бородинское поле, редут и пушка на рассвете" },
+  "gogol-night-before-christmas": { src: "/literature-guide/context/gogol-christmas-night.webp", alt: "Зимняя деревня в рождественскую ночь" },
+  "turgenev-mumu": { src: "/literature-guide/context/turgenev-mumu.webp", alt: "Московский двор у господского дома в 1840-е годы" },
+  "tolstoy-caucasian-prisoner": { src: "/literature-guide/context/tolstoy-caucasian-prisoner.webp", alt: "Горное селение и дорога в кавказской долине" },
+  "chekhov-kashtanka": { src: "/literature-guide/context/chekhov-kashtanka.webp", alt: "Городская улица с фонарями и Каштанка в конце XIX века" }
 };
 
 export function FifthGradeRoutePage({ route, profile, visualIndex }: Props) {
